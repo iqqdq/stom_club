@@ -1,0 +1,319 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="ru.stom_club.app"
+4    android:versionCode="14"
+5    android:versionName="1.0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+10
+11    <queries>
+11-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:4:5-14:15
+12
+13        <!-- Specific apps you interact with, eg: -->
+14        <package android:name="com.google.android.youtube" />
+14-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:6:9-62
+14-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:6:18-59
+15        <package android:name="com.facebook.katana" />
+15-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:7:9-55
+15-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:7:18-52
+16        <package android:name="com.instagram.android" />
+16-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:8:9-57
+16-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:8:18-54
+17        <package android:name="org.telegram.messenger" />
+17-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:9:9-58
+17-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:9:18-55
+18
+19        <intent>
+19-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:10:9-13:18
+20            <action android:name="android.intent.action.SENDTO" />
+20-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:11:13-67
+20-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:11:21-64
+21
+22            <data android:scheme="mailto" />
+22-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:12:13-45
+22-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:12:19-42
+23        </intent>
+24        <intent>
+24-->[:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-16:18
+25            <action android:name="android.intent.action.GET_CONTENT" />
+25-->[:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-72
+25-->[:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:13:21-69
+26
+27            <data android:mimeType="*/*" />
+27-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:12:13-45
+28        </intent>
+29    </queries>
+30
+31    <uses-permission android:name="android.permission.INTERNET" />
+31-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:15:6-67
+31-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:15:23-65
+32    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+32-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:16:5-75
+32-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:16:22-73
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:17:5-79
+33-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:17:22-76
+34    <uses-permission
+34-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:18:5-80
+35        android:name="android.permission.READ_EXTERNAL_STORAGE"
+35-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:18:22-77
+36        android:maxSdkVersion="32" />
+36-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-35
+37    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+37-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:19:5-80
+37-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:19:22-77
+38    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+38-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:20:5-81
+38-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:20:22-78
+39    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS" />
+39-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:21:5-78
+39-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:21:22-75
+40    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+40-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-76
+40-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-73
+41    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+41-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:14:5-75
+41-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:14:22-72
+42    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+42-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-75
+42-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:15:22-72
+43
+44    <permission
+44-->[androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+45        android:name="ru.stom_club.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+45-->[androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+46        android:protectionLevel="signature" />
+46-->[androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+47
+48    <uses-permission android:name="ru.stom_club.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+48-->[androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+48-->[androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+49
+50    <application
+51        android:name="android.app.Application"
+51-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:24:9-42
+52        android:allowBackup="false"
+52-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:26:9-36
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+54        android:icon="@mipmap/launcher_icon"
+54-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:25:9-45
+55        android:label="СтомКлуб"
+55-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:23:9-33
+56        android:usesCleartextTraffic="true" >
+56-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:27:9-44
+57        <provider
+58            android:name="androidx.core.content.FileProvider"
+58-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:29:17-66
+59            android:authorities="ru.stom_club.app.fileProvider"
+59-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:30:17-68
+60            android:exported="false"
+60-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:31:17-41
+61            android:grantUriPermissions="true" >
+61-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:32:17-51
+62            <meta-data
+62-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:34:13-37:56
+63                android:name="android.support.FILE_PROVIDER_PATHS"
+63-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:35:21-71
+64                android:resource="@xml/filepaths" />
+64-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:36:21-54
+65        </provider>
+66
+67        <activity
+67-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:39:9-59:20
+68            android:name="com.example.stom_club.MainActivity"
+68-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:40:13-41
+69            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+69-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:44:13-163
+70            android:exported="true"
+70-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:41:13-36
+71            android:hardwareAccelerated="true"
+71-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:45:13-47
+72            android:launchMode="singleTop"
+72-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:42:13-43
+73            android:theme="@style/LaunchTheme"
+73-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:43:13-47
+74            android:windowSoftInputMode="adjustResize" >
+74-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:46:13-55
+75
+76            <!--
+77                 Specifies an Android theme to apply to this Activity as soon as
+78                 the Android process has started. This theme is visible to the user
+79                 while the Flutter UI initializes. After that, this theme continues
+80                 to determine the Window background behind the Flutter UI.
+81            -->
+82            <meta-data
+82-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:51:13-54:17
+83                android:name="io.flutter.embedding.android.NormalTheme"
+83-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:52:15-70
+84                android:resource="@style/NormalTheme" />
+84-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:53:15-52
+85
+86            <intent-filter>
+86-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:55:13-58:29
+87                <action android:name="android.intent.action.MAIN" />
+87-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:56:17-68
+87-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:56:25-66
+88
+89                <category android:name="android.intent.category.LAUNCHER" />
+89-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:57:17-76
+89-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:57:27-74
+90            </intent-filter>
+91        </activity>
+92        <!--
+93             Don't delete the meta-data below.
+94             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+95        -->
+96        <meta-data
+96-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:62:9-64:33
+97            android:name="flutterEmbedding"
+97-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:63:13-44
+98            android:value="2" />
+98-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:64:13-30
+99
+100        <provider
+100-->[:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+101            android:name="com.sidlatau.flutteremailsender.FlutterEmailSenderFileProvider"
+101-->[:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-90
+102            android:authorities="ru.stom_club.app.file_provider"
+102-->[:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-65
+103            android:exported="false"
+103-->[:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+104            android:grantUriPermissions="true" >
+104-->[:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+105            <meta-data
+105-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:34:13-37:56
+106                android:name="android.support.FILE_PROVIDER_PATHS"
+106-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:35:21-71
+107                android:resource="@xml/shared_file_paths" />
+107-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:36:21-54
+108        </provider>
+109        <provider
+109-->[:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+110            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+110-->[:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-82
+111            android:authorities="ru.stom_club.app.flutter.image_provider"
+111-->[:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-74
+112            android:exported="false"
+112-->[:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+113            android:grantUriPermissions="true" >
+113-->[:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+114            <meta-data
+114-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:34:13-37:56
+115                android:name="android.support.FILE_PROVIDER_PATHS"
+115-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:35:21-71
+116                android:resource="@xml/flutter_image_picker_file_paths" />
+116-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:36:21-54
+117        </provider>
+118
+119        <activity
+119-->[:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+120            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+120-->[:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+121            android:exported="false"
+121-->[:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+122            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+122-->[:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+123
+124        <provider
+124-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-27:20
+125            android:name="com.crazecoder.openfile.FileProvider"
+125-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-64
+126            android:authorities="ru.stom_club.app.fileProvider.com.crazecoder.openfile"
+126-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-88
+127            android:exported="false"
+127-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
+128            android:grantUriPermissions="true" >
+128-->[:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-47
+129            <meta-data
+129-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:34:13-37:56
+130                android:name="android.support.FILE_PROVIDER_PATHS"
+130-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:35:21-71
+131                android:resource="@xml/filepaths" />
+131-->/Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:36:21-54
+132        </provider>
+133        <provider
+133-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+134            android:name="androidx.startup.InitializationProvider"
+134-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+135            android:authorities="ru.stom_club.app.androidx-startup"
+135-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+136            android:exported="false" >
+136-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+137            <meta-data
+137-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+138                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+138-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+139                android:value="androidx.startup" />
+139-->[androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+140            <meta-data
+140-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+141                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+141-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+142                android:value="androidx.startup" />
+142-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+143            <meta-data
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+144                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+145                android:value="androidx.startup" />
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+146        </provider>
+147
+148        <uses-library
+148-->[androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+149            android:name="androidx.window.extensions"
+149-->[androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+150            android:required="false" />
+150-->[androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+151        <uses-library
+151-->[androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+152            android:name="androidx.window.sidecar"
+152-->[androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+153            android:required="false" />
+153-->[androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+154
+155        <receiver
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+156            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+156-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+157            android:directBootAware="false"
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+158            android:enabled="true"
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+159            android:exported="true"
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+160            android:permission="android.permission.DUMP" >
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+161            <intent-filter>
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+162                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+163            </intent-filter>
+164            <intent-filter>
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+165                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+166            </intent-filter>
+167            <intent-filter>
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+168                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+168-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+168-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+169            </intent-filter>
+170            <intent-filter>
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+171                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+171-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+171-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+172            </intent-filter>
+173        </receiver>
+174    </application>
+175
+176</manifest>

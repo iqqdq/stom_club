@@ -1,0 +1,576 @@
+-- Merging decision tree log ---
+application
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:22:4-65:19
+MERGED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-14:19
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-28:19
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-28:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/a6fe72504aaebcb26098bbad03f9943d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/a6fe72504aaebcb26098bbad03f9943d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+	android:label
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:23:9-33
+	android:icon
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:25:9-45
+	android:allowBackup
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:26:9-36
+	android:usesCleartextTraffic
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:27:9-44
+	android:name
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:24:9-42
+provider#androidx.core.content.FileProvider
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:28:9-38:20
+	android:grantUriPermissions
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:32:17-51
+	android:authorities
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:30:17-68
+	android:exported
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:31:17-41
+	tools:replace
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:33:17-52
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:29:17-66
+manifest
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+MERGED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
+MERGED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:email_launcher] /Users/iqqddq/Documents/GitHub/stom_club/build/email_launcher/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite] /Users/iqqddq/Documents/GitHub/stom_club/build/sqflite/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-16:12
+MERGED from [:path_provider_android] /Users/iqqddq/Documents/GitHub/stom_club/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:android_intent_plus] /Users/iqqddq/Documents/GitHub/stom_club/build/android_intent_plus/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:dynamic_color] /Users/iqqddq/Documents/GitHub/stom_club/build/dynamic_color/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_native_splash] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_native_splash/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:webview_flutter_android] /Users/iqqddq/Documents/GitHub/stom_club/build/webview_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:shared_preferences_android] /Users/iqqddq/Documents/GitHub/stom_club/build/shared_preferences_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-30:12
+MERGED from [:hexcolor] /Users/iqqddq/Documents/GitHub/stom_club/build/hexcolor/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:video_player_android] /Users/iqqddq/Documents/GitHub/stom_club/build/video_player_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/iqqddq/.gradle/caches/transforms-3/0a46aa3a2a1471560a341ad000e5de68/transformed/jetified-appcompat-resources-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/iqqddq/.gradle/caches/transforms-3/d76093b939fa2b962e8aabc5966ca3be/transformed/appcompat-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/61189b45ab14d4cc639ccd9d5afdb1c0/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/iqqddq/.gradle/caches/transforms-3/02043889f5571a27660830e3dcde5d06/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.7.2] /Users/iqqddq/.gradle/caches/transforms-3/f42d16b034de2b1dc4a2578a1476e4cd/transformed/jetified-activity-1.7.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.5.0] /Users/iqqddq/.gradle/caches/transforms-3/b0bf12cd25d122ebfdd0efac280ca8ad/transformed/browser-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.webkit:webkit:1.5.0] /Users/iqqddq/.gradle/caches/transforms-3/bbb71925ffea936ce23ebc337d67ec25/transformed/webkit-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/0ef804c792939fa650365ebe748715f9/transformed/jetified-exoplayer-hls-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/c55f6772fd0566848966f6fe95f03528/transformed/jetified-exoplayer-dash-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/484697a76493b3f840d5116c66086bd9/transformed/jetified-exoplayer-smoothstreaming-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/771615b7b0254a736ec00f951d6cbc54/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/aa879b6b7e2a70debcea7df2d48e8bbb/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/296039292032c2d781b934ce62d02e6b/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/86b2e9adf4a1a196d91f521cf95391b8/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/2d6989f7b37bbd9bfccda599010a3b35/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/5db13ac3e139604301e8b2ac7f6e7b5d/transformed/jetified-core-ktx-1.10.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.media:media:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/08d3f9432f50eac07bde9fd31c558f4b/transformed/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/f7a0a8bcb28d598334b0e5aab5f5e2b5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/iqqddq/.gradle/caches/transforms-3/9ce9091738aec8ab6c1ae78b9c437f4c/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/iqqddq/.gradle/caches/transforms-3/9921778d607b9b57eb9db181199589c5/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/5a37c2552595235bcdd37bf08332ff82/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/21dd05e791237f4fc9a3d3cc2c8633b0/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/82275a7587d9bff98f653ae45e9049ee/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/d109f5129541e75bbe502935bd3accf3/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/be1ae1ba5cb9e57feecb83c34c02d84c/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/cf35223782856ab628e67b98cacbdf8c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/23af869234465a628e9ce9a797188314/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/iqqddq/.gradle/caches/transforms-3/8b4fae0397b0cc9bfcd2abb865e1b959/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/98f9f08b08995a5f32cae6eaff818e9a/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/25fb0db99f492cdbd624951fd33335de/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/e0b6094599aa858d49de705cd61e9165/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/4a5c39b4da95bcb564ed3e7b1f134170/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/0211e2d29b037c99ba33a51b6d2a0892/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/iqqddq/.gradle/caches/transforms-3/a8723c4317b8d8751813e5e2dd79b754/transformed/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/iqqddq/.gradle/caches/transforms-3/a9d84871e39b2db0c92f6ccf7dd223bf/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/f4db42a126cff310d7e46fd345c2b8c4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/0b744a3fe914ea9176d6a8040c6434df/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/4576505d890d45d4f5342c05d5a860b4/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/a6fe72504aaebcb26098bbad03f9943d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/64abf44878d825ce9ce68cf3288b4865/transformed/jetified-exoplayer-datasource-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/75fccf1eec84ab3ffebad8235fbdfedc/transformed/jetified-exoplayer-extractor-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/f64a84e1859e93e82a7e420d7efe665a/transformed/jetified-exoplayer-decoder-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/9aa360c0161c67ac612c9c43776391e7/transformed/jetified-exoplayer-database-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/af5b7677477b8a73a039568f1f306788/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/faa48f444f939d051cc74542a1eaa41b/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/c3773c4310b250578118068edc36fbe9/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/a3021e09e1d26057a1ebc61f9db81802/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/iqqddq/.gradle/caches/transforms-3/aa33b6ce0bf333dd441ccc04c0971939/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/2d1ae93fd5ce1a47cf499fb8fa198c50/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+	package
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:2:5-51
+	android:versionCode
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:1-66:12
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:1:11-69
+queries
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:4:5-14:15
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:15
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:15
+package#com.google.android.youtube
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:6:9-62
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:6:18-59
+package#com.facebook.katana
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:7:9-55
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:7:18-52
+package#com.instagram.android
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:8:9-57
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:8:18-54
+package#org.telegram.messenger
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:9:9-58
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:9:18-55
+intent#action:name:android.intent.action.SENDTO+data:scheme:mailto
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:10:9-13:18
+action#android.intent.action.SENDTO
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:11:13-67
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:11:21-64
+data
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:12:13-45
+	android:scheme
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:12:19-42
+uses-permission#android.permission.INTERNET
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:15:6-67
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:15:23-65
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:16:5-75
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:16:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:17:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/771615b7b0254a736ec00f951d6cbc54/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/771615b7b0254a736ec00f951d6cbc54/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/af5b7677477b8a73a039568f1f306788/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/af5b7677477b8a73a039568f1f306788/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:18:5-80
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-80
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-80
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-12:38
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-12:38
+	android:maxSdkVersion
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-35
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:18:22-77
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:19:5-80
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:19:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:20:22-78
+uses-permission#android.permission.UPDATE_DEVICE_STATS
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:21:5-78
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:21:22-75
+uses-sdk
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+MERGED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:email_launcher] /Users/iqqddq/Documents/GitHub/stom_club/build/email_launcher/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:email_launcher] /Users/iqqddq/Documents/GitHub/stom_club/build/email_launcher/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] /Users/iqqddq/Documents/GitHub/stom_club/build/sqflite/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] /Users/iqqddq/Documents/GitHub/stom_club/build/sqflite/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /Users/iqqddq/Documents/GitHub/stom_club/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /Users/iqqddq/Documents/GitHub/stom_club/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:android_intent_plus] /Users/iqqddq/Documents/GitHub/stom_club/build/android_intent_plus/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:android_intent_plus] /Users/iqqddq/Documents/GitHub/stom_club/build/android_intent_plus/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:dynamic_color] /Users/iqqddq/Documents/GitHub/stom_club/build/dynamic_color/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:dynamic_color] /Users/iqqddq/Documents/GitHub/stom_club/build/dynamic_color/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_native_splash] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_native_splash/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_native_splash] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_native_splash/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter_android] /Users/iqqddq/Documents/GitHub/stom_club/build/webview_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter_android] /Users/iqqddq/Documents/GitHub/stom_club/build/webview_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /Users/iqqddq/Documents/GitHub/stom_club/build/shared_preferences_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /Users/iqqddq/Documents/GitHub/stom_club/build/shared_preferences_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:6:5-8:41
+MERGED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:6:5-8:41
+MERGED from [:hexcolor] /Users/iqqddq/Documents/GitHub/stom_club/build/hexcolor/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:hexcolor] /Users/iqqddq/Documents/GitHub/stom_club/build/hexcolor/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] /Users/iqqddq/Documents/GitHub/stom_club/build/video_player_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] /Users/iqqddq/Documents/GitHub/stom_club/build/video_player_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/iqqddq/.gradle/caches/transforms-3/0a46aa3a2a1471560a341ad000e5de68/transformed/jetified-appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/iqqddq/.gradle/caches/transforms-3/0a46aa3a2a1471560a341ad000e5de68/transformed/jetified-appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/iqqddq/.gradle/caches/transforms-3/d76093b939fa2b962e8aabc5966ca3be/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/iqqddq/.gradle/caches/transforms-3/d76093b939fa2b962e8aabc5966ca3be/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/61189b45ab14d4cc639ccd9d5afdb1c0/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/61189b45ab14d4cc639ccd9d5afdb1c0/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/iqqddq/.gradle/caches/transforms-3/02043889f5571a27660830e3dcde5d06/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/iqqddq/.gradle/caches/transforms-3/02043889f5571a27660830e3dcde5d06/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.7.2] /Users/iqqddq/.gradle/caches/transforms-3/f42d16b034de2b1dc4a2578a1476e4cd/transformed/jetified-activity-1.7.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.7.2] /Users/iqqddq/.gradle/caches/transforms-3/f42d16b034de2b1dc4a2578a1476e4cd/transformed/jetified-activity-1.7.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.5.0] /Users/iqqddq/.gradle/caches/transforms-3/b0bf12cd25d122ebfdd0efac280ca8ad/transformed/browser-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.5.0] /Users/iqqddq/.gradle/caches/transforms-3/b0bf12cd25d122ebfdd0efac280ca8ad/transformed/browser-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.5.0] /Users/iqqddq/.gradle/caches/transforms-3/bbb71925ffea936ce23ebc337d67ec25/transformed/webkit-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.5.0] /Users/iqqddq/.gradle/caches/transforms-3/bbb71925ffea936ce23ebc337d67ec25/transformed/webkit-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/0ef804c792939fa650365ebe748715f9/transformed/jetified-exoplayer-hls-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/0ef804c792939fa650365ebe748715f9/transformed/jetified-exoplayer-hls-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/c55f6772fd0566848966f6fe95f03528/transformed/jetified-exoplayer-dash-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/c55f6772fd0566848966f6fe95f03528/transformed/jetified-exoplayer-dash-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/484697a76493b3f840d5116c66086bd9/transformed/jetified-exoplayer-smoothstreaming-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/484697a76493b3f840d5116c66086bd9/transformed/jetified-exoplayer-smoothstreaming-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/771615b7b0254a736ec00f951d6cbc54/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/771615b7b0254a736ec00f951d6cbc54/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/aa879b6b7e2a70debcea7df2d48e8bbb/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/aa879b6b7e2a70debcea7df2d48e8bbb/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/296039292032c2d781b934ce62d02e6b/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/296039292032c2d781b934ce62d02e6b/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/86b2e9adf4a1a196d91f521cf95391b8/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/86b2e9adf4a1a196d91f521cf95391b8/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/2d6989f7b37bbd9bfccda599010a3b35/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/2d6989f7b37bbd9bfccda599010a3b35/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.core:core-ktx:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/5db13ac3e139604301e8b2ac7f6e7b5d/transformed/jetified-core-ktx-1.10.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/5db13ac3e139604301e8b2ac7f6e7b5d/transformed/jetified-core-ktx-1.10.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/08d3f9432f50eac07bde9fd31c558f4b/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/08d3f9432f50eac07bde9fd31c558f4b/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/f7a0a8bcb28d598334b0e5aab5f5e2b5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/f7a0a8bcb28d598334b0e5aab5f5e2b5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/iqqddq/.gradle/caches/transforms-3/9ce9091738aec8ab6c1ae78b9c437f4c/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/iqqddq/.gradle/caches/transforms-3/9ce9091738aec8ab6c1ae78b9c437f4c/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/iqqddq/.gradle/caches/transforms-3/9921778d607b9b57eb9db181199589c5/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/iqqddq/.gradle/caches/transforms-3/9921778d607b9b57eb9db181199589c5/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/5a37c2552595235bcdd37bf08332ff82/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/5a37c2552595235bcdd37bf08332ff82/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/21dd05e791237f4fc9a3d3cc2c8633b0/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/21dd05e791237f4fc9a3d3cc2c8633b0/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/82275a7587d9bff98f653ae45e9049ee/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/82275a7587d9bff98f653ae45e9049ee/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/d109f5129541e75bbe502935bd3accf3/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/d109f5129541e75bbe502935bd3accf3/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/be1ae1ba5cb9e57feecb83c34c02d84c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/be1ae1ba5cb9e57feecb83c34c02d84c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/cf35223782856ab628e67b98cacbdf8c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/cf35223782856ab628e67b98cacbdf8c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/23af869234465a628e9ce9a797188314/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/23af869234465a628e9ce9a797188314/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/iqqddq/.gradle/caches/transforms-3/8b4fae0397b0cc9bfcd2abb865e1b959/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/iqqddq/.gradle/caches/transforms-3/8b4fae0397b0cc9bfcd2abb865e1b959/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/98f9f08b08995a5f32cae6eaff818e9a/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/98f9f08b08995a5f32cae6eaff818e9a/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/25fb0db99f492cdbd624951fd33335de/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/25fb0db99f492cdbd624951fd33335de/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/e0b6094599aa858d49de705cd61e9165/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/e0b6094599aa858d49de705cd61e9165/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/4a5c39b4da95bcb564ed3e7b1f134170/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/4a5c39b4da95bcb564ed3e7b1f134170/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/0211e2d29b037c99ba33a51b6d2a0892/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/0211e2d29b037c99ba33a51b6d2a0892/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/iqqddq/.gradle/caches/transforms-3/a8723c4317b8d8751813e5e2dd79b754/transformed/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/iqqddq/.gradle/caches/transforms-3/a8723c4317b8d8751813e5e2dd79b754/transformed/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/iqqddq/.gradle/caches/transforms-3/a9d84871e39b2db0c92f6ccf7dd223bf/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/iqqddq/.gradle/caches/transforms-3/a9d84871e39b2db0c92f6ccf7dd223bf/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/f4db42a126cff310d7e46fd345c2b8c4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/f4db42a126cff310d7e46fd345c2b8c4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/0b744a3fe914ea9176d6a8040c6434df/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/0b744a3fe914ea9176d6a8040c6434df/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/4576505d890d45d4f5342c05d5a860b4/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/4576505d890d45d4f5342c05d5a860b4/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/a6fe72504aaebcb26098bbad03f9943d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/a6fe72504aaebcb26098bbad03f9943d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/64abf44878d825ce9ce68cf3288b4865/transformed/jetified-exoplayer-datasource-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/64abf44878d825ce9ce68cf3288b4865/transformed/jetified-exoplayer-datasource-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/75fccf1eec84ab3ffebad8235fbdfedc/transformed/jetified-exoplayer-extractor-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/75fccf1eec84ab3ffebad8235fbdfedc/transformed/jetified-exoplayer-extractor-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/f64a84e1859e93e82a7e420d7efe665a/transformed/jetified-exoplayer-decoder-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/f64a84e1859e93e82a7e420d7efe665a/transformed/jetified-exoplayer-decoder-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/9aa360c0161c67ac612c9c43776391e7/transformed/jetified-exoplayer-database-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/9aa360c0161c67ac612c9c43776391e7/transformed/jetified-exoplayer-database-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/af5b7677477b8a73a039568f1f306788/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/iqqddq/.gradle/caches/transforms-3/af5b7677477b8a73a039568f1f306788/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/faa48f444f939d051cc74542a1eaa41b/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/faa48f444f939d051cc74542a1eaa41b/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/c3773c4310b250578118068edc36fbe9/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/c3773c4310b250578118068edc36fbe9/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/a3021e09e1d26057a1ebc61f9db81802/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/iqqddq/.gradle/caches/transforms-3/a3021e09e1d26057a1ebc61f9db81802/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/iqqddq/.gradle/caches/transforms-3/aa33b6ce0bf333dd441ccc04c0971939/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/iqqddq/.gradle/caches/transforms-3/aa33b6ce0bf333dd441ccc04c0971939/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/2d1ae93fd5ce1a47cf499fb8fa198c50/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/2d1ae93fd5ce1a47cf499fb8fa198c50/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:34:13-37:56
+	android:resource
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:36:21-54
+	tools:replace
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:37:21-53
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:35:21-71
+activity#com.example.stom_club.MainActivity
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:39:9-59:20
+	android:launchMode
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:42:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:45:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:46:13-55
+	android:exported
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:41:13-36
+	android:configChanges
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:44:13-163
+	android:theme
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:43:13-47
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:40:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:51:13-54:17
+	android:resource
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:53:15-52
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:52:15-70
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:55:13-58:29
+action#android.intent.action.MAIN
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:56:17-68
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:56:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:57:17-76
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:57:27-74
+meta-data#flutterEmbedding
+ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:62:9-64:33
+	android:value
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:64:13-30
+	android:name
+		ADDED from /Users/iqqddq/Documents/GitHub/stom_club/android/app/src/main/AndroidManifest.xml:63:13-44
+provider#com.sidlatau.flutteremailsender.FlutterEmailSenderFileProvider
+ADDED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-65
+	android:exported
+		ADDED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:flutter_email_sender] /Users/iqqddq/Documents/GitHub/stom_club/build/flutter_email_sender/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-90
+intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
+ADDED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-16:18
+action#android.intent.action.GET_CONTENT
+ADDED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-72
+	android:name
+		ADDED from [:file_picker] /Users/iqqddq/Documents/GitHub/stom_club/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:13:21-69
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-74
+	android:exported
+		ADDED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:image_picker_android] /Users/iqqddq/Documents/GitHub/stom_club/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-82
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] /Users/iqqddq/Documents/GitHub/stom_club/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-76
+	android:name
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-73
+uses-permission#android.permission.READ_MEDIA_VIDEO
+ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:14:22-72
+uses-permission#android.permission.READ_MEDIA_AUDIO
+ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-75
+	android:name
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:15:22-72
+provider#com.crazecoder.openfile.FileProvider
+ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-27:20
+	android:grantUriPermissions
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-88
+	android:exported
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
+	tools:replace
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-48
+	android:name
+		ADDED from [:open_filex] /Users/iqqddq/Documents/GitHub/stom_club/build/open_filex/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-64
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqqddq/.gradle/caches/transforms-3/82cd3e2d4d791759e3b5337902321adc/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/iqqddq/.gradle/caches/transforms-3/c3d08a8be8879ca421d850b4976959ac/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/iqqddq/.gradle/caches/transforms-3/f5a9660e2bf2bf284f01e985c00a8a4d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+permission#ru.stom_club.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+uses-permission#ru.stom_club.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/iqqddq/.gradle/caches/transforms-3/8543de3f558b642bbc7fc8e339bb7f6d/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/iqqddq/.gradle/caches/transforms-3/2fac04b97b760a87c8cbf0f8d49b1346/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqqddq/.gradle/caches/transforms-3/8f36dd25ce270438a6fd48dbf0a2070a/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
