@@ -1,13 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 enum DeviceHeight { small, large }
 
 class DeviceDetector {
-  DeviceHeight detectDeviceHeight() =>
-      MediaQueryData.fromView(WidgetsBinding.instance.window).size.height <=
-              700.0
-          ? DeviceHeight.small
-          : DeviceHeight.large;
+  static DeviceHeight detectDeviceHeight(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    return height <= 700.0 ? DeviceHeight.small : DeviceHeight.large;
+  }
 
-  bool isLarge() => detectDeviceHeight() == DeviceHeight.large ? true : false;
+  static bool isLarge(BuildContext context) {
+    return detectDeviceHeight(context) == DeviceHeight.large;
+  }
 }

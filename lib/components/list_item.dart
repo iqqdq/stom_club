@@ -35,7 +35,8 @@ class ListItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: padding == null
-            ? EdgeInsets.only(bottom: DeviceDetector().isLarge() ? 16.0 : 10.0)
+            ? EdgeInsets.only(
+                bottom: DeviceDetector.isLarge(context) ? 16.0 : 10.0)
             : EdgeInsets.only(bottom: padding!),
         child: Container(
             height: height ?? 68.0,
@@ -67,7 +68,7 @@ class ListItemWidget extends StatelessWidget {
                                 url == null
                                     ? Container()
                                     : Transform.scale(
-                                        scale: DeviceDetector().isLarge()
+                                        scale: DeviceDetector.isLarge(context)
                                             ? 1.0
                                             : 0.75,
                                         child: Container(

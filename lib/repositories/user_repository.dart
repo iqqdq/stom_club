@@ -11,7 +11,7 @@ class UserRepository {
   }
 
   Future<Object> getUser(int id) async {
-    dynamic json = await WebService().get(URLs.users_url + '$id/', true);
+    dynamic json = await WebService().get('${URLs.users_url}$id/', true);
 
     return json["code"] == null ? User.fromJson(json) : Object();
   }

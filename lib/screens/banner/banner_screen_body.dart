@@ -25,15 +25,14 @@ class BannerScreenBodyWidget extends StatefulWidget {
 class _BannerScreenBodyState extends State<BannerScreenBodyWidget> {
   @override
   Widget build(BuildContext context) {
-    final _contentViewHeight = MediaQuery.of(context).size.height -
+    final contentViewHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom -
         Sizes.appBarHeight -
-        Sizes.tabControllerHeight;
-    final _slideshowHeight = _contentViewHeight / 3.0;
+        Sizes.tabControllerHeight(context);
+    final slideshowHeight = contentViewHeight / 3.0;
 
-    final _bannerViewModel =
-        Provider.of<BannerViewModel>(context, listen: true);
+    final bannerViewModel = Provider.of<BannerViewModel>(context, listen: true);
 
     return Scaffold(
         backgroundColor: HexColors.white,
@@ -56,7 +55,7 @@ class _BannerScreenBodyState extends State<BannerScreenBodyWidget> {
         ),
         body: SizedBox.expand(
             child: Stack(children: [
-          _bannerViewModel.loadingStatus == LoadingStatus.searching
+          bannerViewModel.loadingStatus == LoadingStatus.searching
               ? Container()
               : ListView(
                   padding: EdgeInsets.only(
@@ -66,13 +65,13 @@ class _BannerScreenBodyState extends State<BannerScreenBodyWidget> {
                   children: [
                       /// IMAGE
                       Container(
-                          height: _slideshowHeight,
+                          height: slideshowHeight,
                           color: HexColors.gray,
                           child: widget.banner.image == null
                               ? Container()
                               : CachedNetworkImage(
                                   imageUrl: widget.banner.image!,
-                                  height: _slideshowHeight,
+                                  height: slideshowHeight,
                                   fit: BoxFit.fitHeight)),
 
                       /// TEXT
@@ -104,7 +103,7 @@ class _BannerScreenBodyState extends State<BannerScreenBodyWidget> {
                         child: DefaultButtonWidget(
                             title: Titles.show_page,
                             onTap: () =>
-                                _bannerViewModel.showArticleScreen(context))),
+                                bannerViewModel.showArticleScreen(context))),
                     SizedBox(
                         height: MediaQuery.of(context).padding.bottom == 0.0
                             ? 12.0
@@ -115,7 +114,7 @@ class _BannerScreenBodyState extends State<BannerScreenBodyWidget> {
           /// INDICATOR
           widget.banner.product == null
               ? Container()
-              : _bannerViewModel.loadingStatus == LoadingStatus.searching
+              : bannerViewModel.loadingStatus == LoadingStatus.searching
                   ? Container(
                       margin: const EdgeInsets.only(bottom: 32.0),
                       child: const Center(

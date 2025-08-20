@@ -120,22 +120,23 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final _contentViewHeight = MediaQuery.of(context).size.height -
+    final contentViewHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom -
         Sizes.appBarHeight -
-        Sizes.tabControllerHeight;
-    final _slideshowHeight = _contentViewHeight / 3.0;
+        Sizes.tabControllerHeight(context);
 
-    final _productViewModel =
+    final slideshowHeight = contentViewHeight / 3.0;
+
+    final productViewModel =
         Provider.of<ProductViewModel>(context, listen: true);
 
-    final _productInfo = _productViewModel.productInfo;
+    final productInfo = productViewModel.productInfo;
 
-    if (_productInfo != null) {
-      if (_productInfo.images.isNotEmpty) {
+    if (productInfo != null) {
+      if (productInfo.images.isNotEmpty) {
         if (_images.isEmpty) {
-          for (var image in _productInfo.images) {
+          for (var image in productInfo.images) {
             _images.add(image.image);
           }
 
@@ -152,16 +153,17 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
         backgroundColor: HexColors.white,
         body: Stack(children: [
           ListView(
-              padding: EdgeInsets.only(bottom: Sizes.tabControllerHeight),
+              padding:
+                  EdgeInsets.only(bottom: Sizes.tabControllerHeight(context)),
               children: [
                 /// IMAGE SLIDESHOW
                 _images.isEmpty
                     ? Container(
-                        height: _slideshowHeight,
+                        height: slideshowHeight,
                         color: HexColors.gray,
                       )
                     : SizedBox(
-                        height: _slideshowHeight,
+                        height: slideshowHeight,
                         width: MediaQuery.of(context).size.width,
                         child: PageView.builder(
                           controller: _pageController,
@@ -170,7 +172,7 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
                             return SlideShowItemWidget(
                                 margin: EdgeInsets.zero,
                                 borderRadius: 0.0,
-                                height: _slideshowHeight,
+                                height: slideshowHeight,
                                 url: _images[index],
                                 onTap: () => {});
                           },
@@ -186,7 +188,7 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: Sizes.indicatorHeight,
+                            height: Sizes.indicatorHeight(context),
                             child: SmoothPageIndicator(
                                 controller: _pageController,
                                 count: _images.length,
@@ -194,40 +196,40 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
                                   dotHeight: 8.0,
                                   dotWidth: 8.0,
                                   spacing: 16.0,
-                                  activeDotColor:
-                                      HexColors.background.withOpacity(0.9),
-                                  dotColor:
-                                      HexColors.unselected.withOpacity(0.4),
+                                  activeDotColor: HexColors.background
+                                      .withValues(alpha: 0.9),
+                                  dotColor: HexColors.unselected
+                                      .withValues(alpha: 0.4),
                                 )),
                           ),
                         ],
                       ),
 
                 /// RATING
-                _productInfo == null
+                productInfo == null
                     ? Container()
                     : RatingViewWidget(
-                        commentCount: _productInfo.reviewsCount,
-                        oneStar: _productInfo.oneStar,
-                        twoStars: _productInfo.twoStars,
-                        threeStars: _productInfo.threeStars,
-                        fourStars: _productInfo.fourStars,
-                        fiveStars: _productInfo.fiveStars,
-                        rating: _productInfo.rating),
+                        commentCount: productInfo.reviewsCount,
+                        oneStar: productInfo.oneStar,
+                        twoStars: productInfo.twoStars,
+                        threeStars: productInfo.threeStars,
+                        fourStars: productInfo.fourStars,
+                        fiveStars: productInfo.fiveStars,
+                        rating: productInfo.rating),
 
                 /// COMMENT BUTTON
-                _productInfo == null
+                productInfo == null
                     ? Container()
                     : ReviewButton(
-                        title: _productViewModel.review != null
+                        title: productViewModel.review != null
                             ? Titles.change_feedback
                             : Titles.feedback,
                         onTap: () => _isAuthorized
-                            ? _productViewModel.review == null
-                                ? _productViewModel.showReviewScreen(
-                                    context, _productViewModel.review)
-                                : _productViewModel.showAlert(
-                                    context, _productViewModel.review!)
+                            ? productViewModel.review == null
+                                ? productViewModel.showReviewScreen(
+                                    context, productViewModel.review)
+                                : productViewModel.showAlert(
+                                    context, productViewModel.review!)
                             : showOkAlertDialog(
                                 context: context,
                                 title: Titles.warning,
@@ -238,9 +240,9 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
                     padding: const EdgeInsets.only(
                         left: 20.0, right: 20.0, bottom: 30.0, top: 30.0),
                     child:
-                        _productInfo == null || _productInfo.description.isEmpty
+                        productInfo == null || productInfo.description.isEmpty
                             ? Container()
-                            : Html(data: _productInfo.description)
+                            : Html(data: productInfo.description)
                     //  Text(_productInfo.description,
                     //     style: TextStyle(
                     //       fontFamily: 'Inter',
@@ -252,108 +254,108 @@ class _ProductMainScreenBodyState extends State<ProductMainScreenBodyWidget>
                     ),
 
                 /// CREATOR
-                _productInfo == null || _productInfo.manufacturer == null
+                productInfo == null || productInfo.manufacturer == null
                     ? Container()
                     : ProuctInfoWidget(
                         title: Titles.creator,
-                        value: _productInfo.manufacturer?.name ?? ''),
+                        value: productInfo.manufacturer?.name ?? ''),
 
                 /// FORM
-                _productInfo == null || _productInfo.releaseForm.isEmpty
+                productInfo == null || productInfo.releaseForm.isEmpty
                     ? Container()
                     : ProuctInfoWidget(
-                        title: Titles.form, value: _productInfo.releaseForm),
+                        title: Titles.form, value: productInfo.releaseForm),
                 const SeparatorWidget(),
 
                 /// SPECIFICATIONS
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.specifications.isEmpty
+                    : productInfo.specifications.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.specifications,
-                            text: _productInfo.specifications,
+                            text: productInfo.specifications,
                             isExpanded: _selectedIndexes.contains(0),
                             onTap: () => _expand(0)),
 
                 /// PROPERTIES
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.properties.isEmpty
+                    : productInfo.properties.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.properties,
-                            text: _productInfo.properties,
+                            text: productInfo.properties,
                             isExpanded: _selectedIndexes.contains(1),
                             onTap: () => _expand(1)),
 
                 /// COMPOUND
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.compound.isEmpty
+                    : productInfo.compound.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.compound,
-                            text: _productInfo.compound,
+                            text: productInfo.compound,
                             isExpanded: _selectedIndexes.contains(2),
                             onTap: () => _expand(2)),
 
                 /// PURPOSE
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.purpose.isEmpty
+                    : productInfo.purpose.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.purpose,
-                            text: _productInfo.purpose,
+                            text: productInfo.purpose,
                             isExpanded: _selectedIndexes.contains(3),
                             onTap: () => _expand(3)),
 
                 /// NOTES
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.notes.isEmpty
+                    : productInfo.notes.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.notes,
-                            text: _productInfo.notes,
+                            text: productInfo.notes,
                             isExpanded: _selectedIndexes.contains(4),
                             onTap: () => _expand(4)),
 
                 ///  CONTRAINDICATIONS
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.contraindications.isEmpty
+                    : productInfo.contraindications.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.contraindications,
-                            text: _productInfo.contraindications,
+                            text: productInfo.contraindications,
                             isExpanded: _selectedIndexes.contains(5),
                             onTap: () => _expand(5)),
 
                 /// SIDE EFFECTS
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.sideEffects.isEmpty
+                    : productInfo.sideEffects.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.side_effects,
-                            text: _productInfo.sideEffects,
+                            text: productInfo.sideEffects,
                             isExpanded: _selectedIndexes.contains(6),
                             onTap: () => _expand(6)),
 
                 /// TERMS
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.terms.isEmpty
+                    : productInfo.terms.isEmpty
                         ? Container()
                         : ParamsListItemWidget(
                             title: Titles.terms,
-                            text: _productInfo.terms,
+                            text: productInfo.terms,
                             isExpanded: _selectedIndexes.contains(7),
                             onTap: () => _expand(7))
               ]),
-          _productViewModel.loadingStatus == LoadingStatus.searching
+          productViewModel.loadingStatus == LoadingStatus.searching
               ? Container(
                   margin: EdgeInsets.only(top: Sizes.appBarHeight + 24.0),
                   child: const LoadIndicatorWidget(indicatorOnly: true))

@@ -25,28 +25,28 @@ class ProductExtraScreenBodyWidget extends StatefulWidget {
 class _ProductExtraScreenBodyState extends State<ProductExtraScreenBodyWidget> {
   @override
   Widget build(BuildContext context) {
-    final _productViewModel =
+    final productViewModel =
         Provider.of<ProductViewModel>(context, listen: true);
-
-    final _productInfo = _productViewModel.productInfo;
+    final productInfo = productViewModel.productInfo;
 
     return Scaffold(
         backgroundColor: HexColors.white,
         body: Stack(children: [
           ListView(
-              padding: EdgeInsets.only(bottom: Sizes.tabControllerHeight),
+              padding:
+                  EdgeInsets.only(bottom: Sizes.tabControllerHeight(context)),
               children: [
                 const SizedBox(height: 14.0),
                 ReviewsButton(
                     reviewCount:
-                        _productViewModel.productInfo?.reviewsCount ?? 0,
-                    rating: _productInfo?.rating ?? 0.0,
-                    onTap: () => _productViewModel.showReviewsScreen(context)),
+                        productViewModel.productInfo?.reviewsCount ?? 0,
+                    rating: productInfo?.rating ?? 0.0,
+                    onTap: () => productViewModel.showReviewsScreen(context)),
 
                 /// ARTICLE LIST
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.articles.articles.isEmpty
+                    : productInfo.articles.articles.isEmpty
                         ? Container()
                         : Padding(
                             padding: const EdgeInsets.only(
@@ -65,40 +65,40 @@ class _ProductExtraScreenBodyState extends State<ProductExtraScreenBodyWidget> {
                           ),
 
                 /// ARTICLES
-                _productInfo == null
+                productInfo == null
                     ? Container()
                     : SizedBox(
                         child: ListView.builder(
                             physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: _productInfo.articles.articles.length,
+                            itemCount: productInfo.articles.articles.length,
                             padding: const EdgeInsets.only(
                                 left: 20.0, right: 20.0, bottom: 32.0),
                             itemBuilder: (context, index) {
                               return ExtraListItem(
-                                  title: _productInfo
+                                  title: productInfo
                                       .articles.articles[index].title,
-                                  imageUrl: _productInfo.articles
-                                          .articles[index].images.isEmpty
+                                  imageUrl: productInfo.articles.articles[index]
+                                          .images.isEmpty
                                       ? ''
-                                      : _productInfo.articles.articles[index]
+                                      : productInfo.articles.articles[index]
                                           .images.first.image,
                                   dateTime:
                                       DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-                                          .parse(_productInfo.articles
+                                          .parse(productInfo.articles
                                               .articles[index].createdAt),
-                                  onTap: () => _productViewModel
-                                      .showProductArticleScreen(
+                                  onTap: () =>
+                                      productViewModel.showProductArticleScreen(
                                           context,
-                                          _productInfo
+                                          productInfo
                                               .articles.articles[index]));
                             }),
                       ),
 
                 /// VIDEOS TITLE
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.video.isEmpty
+                    : productInfo.video.isEmpty
                         ? Container()
                         : Padding(
                             padding:
@@ -113,38 +113,38 @@ class _ProductExtraScreenBodyState extends State<ProductExtraScreenBodyWidget> {
                           ),
 
                 /// VIDEOS
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.video.isEmpty
+                    : productInfo.video.isEmpty
                         ? Container()
                         : SizedBox(
                             child: ListView.builder(
                                 physics: const NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
-                                itemCount: _productInfo.video.length,
+                                itemCount: productInfo.video.length,
                                 padding: const EdgeInsets.only(
                                     left: 20.0, right: 20.0, bottom: 32.0),
                                 itemBuilder: (context, index) {
                                   return ExtraListItem(
-                                      title: _productInfo.video[index].name,
+                                      title: productInfo.video[index].name,
                                       imageUrl:
-                                          'https://img.youtube.com/vi/${_productInfo.video[index].videoUrl.substring(_productInfo.video[index].videoUrl.length - 11)}/0.jpg',
+                                          'https://img.youtube.com/vi/${productInfo.video[index].videoUrl.substring(productInfo.video[index].videoUrl.length - 11)}/0.jpg',
                                       dateTime: DateFormat(
                                               "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-                                          .parse(_productInfo
+                                          .parse(productInfo
                                                   .video[index].createdAt ??
                                               ''),
-                                      onTap: () => _productViewModel
-                                          .openVideoUrl(_productInfo
+                                      onTap: () => productViewModel
+                                          .openVideoUrl(productInfo
                                               .video[index].videoUrl));
                                 })),
 
                 /// DOCUMENT TITLE
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.documents == null
+                    : productInfo.documents == null
                         ? Container()
-                        : _productInfo.documents!.isEmpty
+                        : productInfo.documents!.isEmpty
                             ? Container()
                             : Padding(
                                 padding: const EdgeInsets.only(
@@ -159,46 +159,43 @@ class _ProductExtraScreenBodyState extends State<ProductExtraScreenBodyWidget> {
                               ),
 
                 /// DOCUMENTS
-                _productInfo == null
+                productInfo == null
                     ? Container()
-                    : _productInfo.documents == null
+                    : productInfo.documents == null
                         ? Container()
-                        : _productInfo.documents!.isEmpty
+                        : productInfo.documents!.isEmpty
                             ? Container()
                             : SizedBox(
                                 child: ListView.builder(
                                     physics:
                                         const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
-                                    itemCount: _productInfo.documents?.length,
+                                    itemCount: productInfo.documents?.length,
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 20.0),
                                     itemBuilder: (context, index) {
-                                      var name =
-                                          _productInfo.documents![index].name ==
-                                                  null
-                                              ? ''
-                                              : _productInfo
-                                                  .documents![index].name!;
+                                      var name = productInfo
+                                                  .documents![index].name ==
+                                              null
+                                          ? ''
+                                          : productInfo.documents![index].name!;
 
-                                      var fileType = _productInfo
+                                      var fileType = productInfo
                                                   .documents![index].fileType ==
                                               null
                                           ? ''
-                                          : '.' +
-                                              _productInfo
-                                                  .documents![index].fileType!;
+                                          : '.${productInfo.documents![index].fileType!}';
 
                                       var url =
-                                          _productInfo.documents![index].file;
+                                          productInfo.documents![index].file;
 
                                       return DocumentListItemWidget(
                                           name: name + fileType,
                                           onTap: () =>
-                                              _productViewModel.openFile(url));
+                                              productViewModel.openFile(url));
                                     }))
               ]),
-          _productViewModel.loadingStatus == LoadingStatus.searching
+          productViewModel.loadingStatus == LoadingStatus.searching
               ? Container(
                   margin: EdgeInsets.only(top: Sizes.appBarHeight + 24.0),
                   child: const LoadIndicatorWidget(indicatorOnly: true))

@@ -90,37 +90,39 @@ class _CatalogScreenBodyState extends State<CatalogScreenBodyWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final _contentViewHeight = MediaQuery.of(context).size.height -
+    final contentViewHeight = MediaQuery.of(context).size.height -
         (MediaQuery.of(context).padding.top +
-            (DeviceDetector().isLarge() ? 0.0 : 12.0)) -
+            (DeviceDetector.isLarge(context) ? 0.0 : 12.0)) -
         Sizes.appBarHeight -
-        Sizes.tabControllerHeight;
-    final _slideshowHeight = DeviceDetector().isLarge() ? 200.0 : 160.0;
+        Sizes.tabControllerHeight(context);
+    final slideshowHeight = DeviceDetector.isLarge(context) ? 200.0 : 160.0;
 
-    final _catalogViewModel =
+    final catalogViewModel =
         Provider.of<CatalogViewModel>(context, listen: true);
 
-    if (_catalogViewModel.banners.isNotEmpty) {
+    if (catalogViewModel.banners.isNotEmpty) {
       if (_timer.isActive) {
         _timer.cancel();
       }
 
-      _startTimer(_catalogViewModel.banners.length);
+      _startTimer(catalogViewModel.banners.length);
     }
 
-    if (_catalogViewModel.subcategories.isNotEmpty) {
-      for (var subcategory in _catalogViewModel.subcategories) {
+    if (catalogViewModel.subcategories.isNotEmpty) {
+      for (var subcategory in catalogViewModel.subcategories) {
         if (subcategory.name == Titles.newest) {
-          _catalogViewModel.subcategories
+          catalogViewModel.subcategories
               .removeWhere((element) => element.id == subcategory.id);
-          _catalogViewModel.subcategories
-              .insert(_catalogViewModel.subcategories.length, subcategory);
+          catalogViewModel.subcategories
+              .insert(catalogViewModel.subcategories.length, subcategory);
         }
       }
     }
 
-    final _listHeight =
-        _contentViewHeight - _slideshowHeight - Sizes.indicatorHeight - 12.0;
+    final listHeight = contentViewHeight -
+        slideshowHeight -
+        Sizes.indicatorHeight(context) -
+        12.0;
 
     return Scaffold(
         backgroundColor: HexColors.background,
@@ -128,18 +130,18 @@ class _CatalogScreenBodyState extends State<CatalogScreenBodyWidget>
             child: Padding(
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).padding.top +
-                        (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                        (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
                 child: Stack(children: [
                   Column(children: [
                     /// APP BAR
                     CatalogAppBarWidget(
                         onSearchTap: () => {
                               _timer.cancel(),
-                              _catalogViewModel.showSearchScreen(context)
+                              catalogViewModel.showSearchScreen(context)
                             },
                         onProfileTap: () => {
                               _timer.cancel(),
-                              _catalogViewModel.showProfileScreen(context)
+                              catalogViewModel.showProfileScreen(context)
                             }),
                     Expanded(
                         child: ListView(
@@ -147,35 +149,35 @@ class _CatalogScreenBodyState extends State<CatalogScreenBodyWidget>
                       padding: const EdgeInsets.only(top: 12.0),
                       children: [
                         /// IMAGE SLIDESHOW
-                        _catalogViewModel.loadingStatus ==
+                        catalogViewModel.loadingStatus ==
                                 LoadingStatus.completed
                             ? Container(
                                 margin: const EdgeInsets.only(top: 12.0),
-                                height: _slideshowHeight,
-                                child: _catalogViewModel.loadingStatus ==
+                                height: slideshowHeight,
+                                child: catalogViewModel.loadingStatus ==
                                         LoadingStatus.searching
                                     ? Container()
                                     : PageView.builder(
                                         controller: _pageController,
                                         itemCount:
-                                            _catalogViewModel.banners.length,
+                                            catalogViewModel.banners.length,
                                         itemBuilder: (_, index) {
                                           return SlideShowItemWidget(
                                               margin:
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 20.0),
-                                              height: _slideshowHeight,
-                                              title: _catalogViewModel
+                                              height: slideshowHeight,
+                                              title: catalogViewModel
                                                   .banners[index].title,
-                                              url: _catalogViewModel
+                                              url: catalogViewModel
                                                       .banners[index].image ??
                                                   '',
                                               onTap: () => {
                                                     _timer.cancel(),
-                                                    _catalogViewModel
+                                                    catalogViewModel
                                                         .showBannerScreen(
                                                             context,
-                                                            _catalogViewModel
+                                                            catalogViewModel
                                                                 .banners[index])
                                                   });
                                         },
@@ -184,34 +186,34 @@ class _CatalogScreenBodyState extends State<CatalogScreenBodyWidget>
                             : Container(),
 
                         /// PAGE INDICATOR
-                        _catalogViewModel.loadingStatus ==
+                        catalogViewModel.loadingStatus ==
                                     LoadingStatus.searching ||
-                                _catalogViewModel.banners.isEmpty
+                                catalogViewModel.banners.isEmpty
                             ? Container()
                             : Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                    height: Sizes.indicatorHeight,
+                                    height: Sizes.indicatorHeight(context),
                                     child: SmoothPageIndicator(
                                         controller: _pageController,
-                                        count: _catalogViewModel.banners.length,
+                                        count: catalogViewModel.banners.length,
                                         effect: ExpandingDotsEffect(
                                           dotHeight: 8.0,
                                           dotWidth: 8.0,
                                           spacing: 16.0,
                                           activeDotColor: HexColors.white,
-                                          dotColor:
-                                              HexColors.white.withOpacity(0.2),
+                                          dotColor: HexColors.white
+                                              .withValues(alpha: 0.2),
                                         )),
                                   ),
                                 ],
                               ),
 
                         /// TYPES
-                        _catalogViewModel.loadingStatus ==
+                        catalogViewModel.loadingStatus ==
                                     LoadingStatus.searching ||
-                                _catalogViewModel.subcategories.isEmpty
+                                catalogViewModel.subcategories.isEmpty
                             ? Container()
                             : TweenAnimationBuilder(
                                 duration: const Duration(milliseconds: 300),
@@ -222,54 +224,54 @@ class _CatalogScreenBodyState extends State<CatalogScreenBodyWidget>
                                       scale: value, child: child);
                                 },
                                 child: SizedBox(
-                                    height: _listHeight,
+                                    height: listHeight,
                                     child: ListView.builder(
                                         shrinkWrap: true,
-                                        itemCount: _catalogViewModel
+                                        itemCount: catalogViewModel
                                                 .subcategories.length +
                                             1,
                                         padding: const EdgeInsets.only(
                                             left: 20.0, right: 20.0),
                                         itemBuilder: (context, index) {
                                           return ListItemWidget(
-                                              title: index == _catalogViewModel.subcategories.length
+                                              title: index == catalogViewModel.subcategories.length
                                                   ? Titles.newest
-                                                  : _catalogViewModel
+                                                  : catalogViewModel
                                                       .subcategories[index]
                                                       .name,
-                                              color:
-                                                  index == _catalogViewModel.subcategories.length
-                                                      ? HexColors.newest
-                                                      : HexColors.row,
-                                              url: index == _catalogViewModel.subcategories.length
+                                              color: index == catalogViewModel.subcategories.length
+                                                  ? HexColors.newest
+                                                  : HexColors.row,
+                                              url: index == catalogViewModel.subcategories.length
                                                   ? ''
-                                                  : _catalogViewModel
+                                                  : catalogViewModel
                                                       .subcategories[index]
                                                       .image,
-                                              fontSize: DeviceDetector().isLarge()
-                                                  ? 20.0
-                                                  : 18.0,
-                                              height: _listHeight /
-                                                      (_catalogViewModel
+                                              fontSize:
+                                                  DeviceDetector.isLarge(context)
+                                                      ? 20.0
+                                                      : 18.0,
+                                              height: listHeight /
+                                                      (catalogViewModel
                                                               .subcategories
                                                               .length +
                                                           1) -
-                                                  (DeviceDetector().isLarge()
+                                                  (DeviceDetector.isLarge(context)
                                                       ? 16.0
                                                       : 10.0),
-                                              onTap: () => index == _catalogViewModel.subcategories.length
-                                                  ? _catalogViewModel.showProductsScreen(
+                                              onTap: () => index == catalogViewModel.subcategories.length
+                                                  ? catalogViewModel.showProductsScreen(
                                                       context,
-                                                      index == _catalogViewModel.subcategories.length,
-                                                      _catalogViewModel.subcategories)
-                                                  : _catalogViewModel.showCategoryScreen(context, _catalogViewModel.subcategories[index]));
+                                                      index == catalogViewModel.subcategories.length,
+                                                      catalogViewModel.subcategories)
+                                                  : catalogViewModel.showCategoryScreen(context, catalogViewModel.subcategories[index]));
                                         })))
                       ],
                     )),
                   ]),
 
                   /// INDICATOR
-                  _catalogViewModel.loadingStatus == LoadingStatus.searching
+                  catalogViewModel.loadingStatus == LoadingStatus.searching
                       ? Center(
                           child: Padding(
                               padding:

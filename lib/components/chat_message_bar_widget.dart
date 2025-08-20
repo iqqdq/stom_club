@@ -75,21 +75,23 @@ class _ChatMessageBarState extends State<ChatMessageBarWidget> {
 
   void _showAlert(BuildContext context) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
-        context: context,
-        backgroundColor: Colors.transparent,
-        builder: (context) => ActionSheetWidget(
-                actions: [
-                  Titles.file,
-                  Titles.image,
-                ],
-                onIndexTap: (index) =>
-                    index == 0 ? _openSystemFolder() : _openGallery()));
+      barrierColor: Colors.black.withValues(alpha: 0.5),
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => ActionSheetWidget(
+        actions: [
+          Titles.file,
+          Titles.image,
+        ],
+        onIndexTap: (index) =>
+            index == 0 ? _openSystemFolder() : _openGallery(),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final _padding = MediaQuery.of(context).padding;
+    final padding = MediaQuery.of(context).padding;
 
     return Align(
         alignment: Alignment.bottomCenter,
@@ -105,9 +107,9 @@ class _ChatMessageBarState extends State<ChatMessageBarWidget> {
                     padding: const EdgeInsets.only(
                         left: 16.0, right: 20.0, top: 8.0),
                     margin: EdgeInsets.only(
-                        bottom: DeviceDetector().isLarge()
-                            ? _padding.bottom > 0.0
-                                ? _padding.bottom
+                        bottom: DeviceDetector.isLarge(context)
+                            ? padding.bottom > 0.0
+                                ? padding.bottom
                                 : 8.0
                             : 12.0),
                     color: HexColors.gray,

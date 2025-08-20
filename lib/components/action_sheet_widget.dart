@@ -39,7 +39,7 @@ class _ActionSheetState extends State<ActionSheetWidget>
             bottom: title == 'Cancel' || title == 'Отмена' ? 0.0 : 10.0),
         decoration: BoxDecoration(
             color: title == 'Cancel' || title == 'Отмена'
-                ? HexColors.white.withOpacity(0.9)
+                ? HexColors.white.withValues(alpha: 0.9)
                 : HexColors.white,
             borderRadius: BorderRadius.circular(16.0)),
         child: Material(
@@ -75,10 +75,10 @@ class _ActionSheetState extends State<ActionSheetWidget>
 
   @override
   Widget build(BuildContext context) {
-    final _size = MediaQuery.of(context).size;
-    final _padding = MediaQuery.of(context).padding;
-    final _sheetSize = ((widget.actions.length + 1) * 67.0) +
-        (DeviceDetector().isLarge() ? _padding.bottom / 2 : 12.0);
+    final size = MediaQuery.of(context).size;
+    final padding = MediaQuery.of(context).padding;
+    final sheetSize = ((widget.actions.length + 1) * 67.0) +
+        (DeviceDetector.isLarge(context) ? padding.bottom / 2 : 12.0);
 
     return Stack(children: [
       InkWell(
@@ -92,8 +92,8 @@ class _ActionSheetState extends State<ActionSheetWidget>
           child: Opacity(
               opacity: _animationController.value,
               child: Container(
-                width: _size.width,
-                height: _size.height,
+                width: size.width,
+                height: size.height,
                 color: const Color.fromRGBO(0, 0, 0, 0.55),
               ))),
       AnimatedBuilder(
@@ -102,12 +102,12 @@ class _ActionSheetState extends State<ActionSheetWidget>
             return Column(
               children: [
                 Container(
-                    height: _size.height -
-                        (_sheetSize * _animationController.value)),
+                    height:
+                        size.height - (sheetSize * _animationController.value)),
                 SizedBox(
-                    height: _sheetSize,
+                    height: sheetSize,
                     child: ListView.builder(
-                        physics: _sheetSize > _size.height
+                        physics: sheetSize > size.height
                             ? const ScrollPhysics()
                             : const NeverScrollableScrollPhysics(),
                         padding: const EdgeInsets.only(left: 20.0, right: 20.0),

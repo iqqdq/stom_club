@@ -69,11 +69,11 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _productsViewModel =
+    final productsViewModel =
         Provider.of<ProductsViewModel>(context, listen: true);
 
     if (_isRefresh) {
-      _productsViewModel
+      productsViewModel
           .getProductList(_isRefresh, _pagination, _textEditingController.text)
           .then((value) => _isRefresh = !_isRefresh);
     }
@@ -119,7 +119,7 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
 
                           _debouncer.run(() {
                             _pagination.number = 1;
-                            _productsViewModel
+                            productsViewModel
                                 .getProductList(true, _pagination,
                                     _textEditingController.text)
                                 .then((value) =>
@@ -133,11 +133,11 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
                     onTap: () => {
                           _pagination.number = 1,
                           widget.isNew
-                              ? _productsViewModel.showCategoryFilterScreen(
+                              ? productsViewModel.showCategoryFilterScreen(
                                   context,
                                   _pagination,
                                   _textEditingController.text)
-                              : _productsViewModel.showManufacturerFilterScreen(
+                              : productsViewModel.showManufacturerFilterScreen(
                                   context,
                                   _pagination,
                                   _textEditingController.text)
@@ -147,10 +147,10 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
 
             SizedBox(
                 height: widget.isNew
-                    ? _productsViewModel.selectedSubcategories.isEmpty
+                    ? productsViewModel.selectedSubcategories.isEmpty
                         ? 0.0
                         : 16.0
-                    : _productsViewModel.manufacturers.isEmpty
+                    : productsViewModel.manufacturers.isEmpty
                         ? 0.0
                         : 16.0),
 
@@ -158,36 +158,36 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
             Container(
                 margin: const EdgeInsets.only(left: 20.0),
                 height: widget.isNew
-                    ? _productsViewModel.selectedSubcategories.isEmpty
+                    ? productsViewModel.selectedSubcategories.isEmpty
                         ? 0.0
                         : 38.0
-                    : _productsViewModel.manufacturers.isEmpty
+                    : productsViewModel.manufacturers.isEmpty
                         ? 0.0
                         : 38.0,
                 child: ListView.builder(
                     padding: const EdgeInsets.only(right: 10.0),
                     scrollDirection: Axis.horizontal,
                     itemCount: widget.isNew
-                        ? _productsViewModel.selectedSubcategories.length
-                        : _productsViewModel.manufacturers.length,
+                        ? productsViewModel.selectedSubcategories.length
+                        : productsViewModel.manufacturers.length,
                     itemBuilder: (context, index) {
                       return FilterListItemWidget(
                           title: widget.isNew
-                              ? _productsViewModel
+                              ? productsViewModel
                                   .selectedSubcategories[index].name
-                              : _productsViewModel.manufacturers[index].name,
+                              : productsViewModel.manufacturers[index].name,
                           onTap: () => {},
                           onRemoveTap: () => {
                                 _pagination.number = 1,
                                 widget.isNew
-                                    ? _productsViewModel.removeCategory(
+                                    ? productsViewModel.removeCategory(
                                         _pagination,
-                                        _productsViewModel
+                                        productsViewModel
                                             .selectedSubcategories[index].id,
                                         _textEditingController.text)
-                                    : _productsViewModel.removeManufacturer(
+                                    : productsViewModel.removeManufacturer(
                                         _pagination,
-                                        _productsViewModel
+                                        productsViewModel
                                             .manufacturers[index].id,
                                         _textEditingController.text)
                               });
@@ -208,26 +208,26 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
                             bottom: MediaQuery.of(context).padding.bottom == 0.0
                                 ? 12.0
                                 : MediaQuery.of(context).padding.bottom),
-                        itemCount: _productsViewModel.products.length,
+                        itemCount: productsViewModel.products.length,
                         itemBuilder: (context, index) {
                           return ProductListItem(
-                              title: _productsViewModel.products[index].name,
-                              imageUrl: _productsViewModel
+                              title: productsViewModel.products[index].name,
+                              imageUrl: productsViewModel
                                       .products[index].images.isEmpty
                                   ? ''
-                                  : _productsViewModel
+                                  : productsViewModel
                                       .products[index].images.first.image,
-                              rating: _productsViewModel.products[index].rating,
-                              reviewsCount: _productsViewModel
+                              rating: productsViewModel.products[index].rating,
+                              reviewsCount: productsViewModel
                                   .products[index].reviewsCount,
-                              onTap: () => _productsViewModel.showProductScreen(
-                                  context, _productsViewModel.products[index]));
+                              onTap: () => productsViewModel.showProductScreen(
+                                  context, productsViewModel.products[index]));
                         })))
           ]),
 
           /// EMPTY LIST TEXT
-          _productsViewModel.loadingStatus == LoadingStatus.completed &&
-                  _productsViewModel.products.isEmpty &&
+          productsViewModel.loadingStatus == LoadingStatus.completed &&
+                  productsViewModel.products.isEmpty &&
                   !_isSearching
               ? Center(
                   child: Padding(
@@ -242,7 +242,7 @@ class _ProductsScreenBodyState extends State<ProductsScreenBodyWidget> {
 
           /// INDICATOR
           _isSearching ||
-                  _productsViewModel.loadingStatus == LoadingStatus.searching
+                  productsViewModel.loadingStatus == LoadingStatus.searching
               ? Container(
                   margin: EdgeInsets.only(top: Sizes.appBarHeight + 24.0),
                   child: const LoadIndicatorWidget())

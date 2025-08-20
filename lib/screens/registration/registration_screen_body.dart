@@ -111,9 +111,11 @@ class _RegistrationScreenBodyState extends State<RegistrationScreenBodyWidget> {
           border: UnderlineInputBorder(
             borderSide: BorderSide(color: HexColors.unselected),
           )),
-      onTap: () => setState(() => {
-            if (index == 3) registrationViewModel.showSelectionScreen(context)
-          }),
+      onTap: () => setState(() {
+        if (index == 3) {
+          registrationViewModel.showSelectionScreen(context);
+        }
+      }),
       onEditingComplete: () => setState(() {
         switch (index) {
           case 0:
@@ -141,13 +143,13 @@ class _RegistrationScreenBodyState extends State<RegistrationScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _registrationViewModel =
+    final registrationViewModel =
         Provider.of<RegistrationViewModel>(context, listen: true);
 
     _professionTextEditingController.text =
-        _registrationViewModel.profession == null
+        registrationViewModel.profession == null
             ? ''
-            : _registrationViewModel.profession!.name;
+            : registrationViewModel.profession!.name;
 
     return Stack(children: [
       SizedBox.expand(
@@ -163,18 +165,18 @@ class _RegistrationScreenBodyState extends State<RegistrationScreenBodyWidget> {
                         _surnameTextEditingController,
                         _surnameFocusNode,
                         Titles.surname,
-                        _registrationViewModel,
+                        registrationViewModel,
                         0),
                     const SizedBox(height: 16.0),
 
                     /// NAME INPUT
                     _getTextFormField(_nameTextEditingController,
-                        _nameFocusNode, Titles.name, _registrationViewModel, 1),
+                        _nameFocusNode, Titles.name, registrationViewModel, 1),
                     const SizedBox(height: 16.0),
 
                     /// CITY INPUT
                     _getTextFormField(_cityTextEditingController,
-                        _cityFocusNode, Titles.city, _registrationViewModel, 2),
+                        _cityFocusNode, Titles.city, registrationViewModel, 2),
                     const SizedBox(height: 16.0),
 
                     /// PROFESSION INPUT
@@ -182,7 +184,7 @@ class _RegistrationScreenBodyState extends State<RegistrationScreenBodyWidget> {
                         _professionTextEditingController,
                         _professionFocusNode,
                         Titles.profession,
-                        _registrationViewModel,
+                        registrationViewModel,
                         3),
                     const SizedBox(height: 40.0),
 
@@ -198,18 +200,17 @@ class _RegistrationScreenBodyState extends State<RegistrationScreenBodyWidget> {
                               FocusScope.of(context).unfocus(),
 
                               // REGISTER A NEW USER
-                              _registrationViewModel
+                              registrationViewModel
                                   .registerUser(
                                       _nameTextEditingController.text,
                                       _surnameTextEditingController.text,
-                                      _registrationViewModel.profession?.id ??
-                                          1,
+                                      registrationViewModel.profession?.id ?? 1,
                                       null,
                                       _cityTextEditingController.text,
                                       '',
                                       '')
                                   .then((value) => {
-                                        if (_registrationViewModel.user != null)
+                                        if (registrationViewModel.user != null)
                                           widget.onUpdate(4)
                                       })
                             })
@@ -235,7 +236,7 @@ class _RegistrationScreenBodyState extends State<RegistrationScreenBodyWidget> {
           ])),
 
       /// INDICATOR
-      _registrationViewModel.loadingStatus == LoadingStatus.searching
+      registrationViewModel.loadingStatus == LoadingStatus.searching
           ? const Padding(
               padding: EdgeInsets.only(bottom: 36.0),
               child: Center(child: LoadIndicatorWidget()))

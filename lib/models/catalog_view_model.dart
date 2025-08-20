@@ -190,8 +190,9 @@ class CatalogViewModel with ChangeNotifier {
     Authorization? authorization = await userService.getAuth();
     AuthToken? authToken = await userService.getToken();
 
-    showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+    if (context.mounted) {
+      showMaterialModalBottomSheet(
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => authorization == null
@@ -200,6 +201,10 @@ class CatalogViewModel with ChangeNotifier {
                 ? const AuthorizationScreenWidget()
                 : authToken == null
                     ? const AuthorizationScreenWidget()
-                    : ProfileScreenWidget(userId: authorization.id));
+                    : ProfileScreenWidget(
+                        userId: authorization.id,
+                      ),
+      );
+    }
   }
 }

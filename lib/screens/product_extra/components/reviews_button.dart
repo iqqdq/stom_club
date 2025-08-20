@@ -35,7 +35,7 @@ class ReviewsButton extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(horizontal: 16.0),
                           width: 0.5,
                           height: 46.0,
-                          color: HexColors.unselected.withOpacity(0.5)),
+                          color: HexColors.unselected.withValues(alpha: 0.5)),
                       Expanded(
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

@@ -31,7 +31,7 @@ class _CategoryFilterScreenBodyState
         body: Container(
             margin: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             padding: const EdgeInsets.only(top: 16.0),
             decoration: BoxDecoration(
                 color: HexColors.background,
@@ -68,16 +68,16 @@ class _CategoryFilterScreenBodyState
                         top: 18.0, left: 20.0, bottom: 12.0, right: 20.0),
                     itemCount: widget.subcategories.length,
                     itemBuilder: (context, index) {
-                      var _isSelected = false;
+                      var isSelected = false;
                       for (var category in _selectedSubcategories) {
                         if (category.id == widget.subcategories[index].id) {
-                          _isSelected = true;
+                          isSelected = true;
                         }
                       }
 
                       return SelectionListItemWidget(
                           title: widget.subcategories[index].name,
-                          isSelected: _isSelected,
+                          isSelected: isSelected,
                           onTap: () => setState(() {
                                 _selectedSubcategories
                                     .add(widget.subcategories[index]);

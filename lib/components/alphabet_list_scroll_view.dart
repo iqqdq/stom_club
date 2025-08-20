@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element_parameter, strict_top_level_inference
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 

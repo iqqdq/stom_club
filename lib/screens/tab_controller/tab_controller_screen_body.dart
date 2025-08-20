@@ -50,14 +50,17 @@ class _TabControllerScreenBodyState
               userService.setAppStatus(true),
 
               /// SHOW AUTH SCREEN
-              Future.delayed(
-                  const Duration(seconds: 1),
-                  () => showMaterialModalBottomSheet(
-                      enableDrag: false,
-                      barrierColor: Colors.black.withOpacity(0.5),
-                      context: context,
-                      backgroundColor: Colors.transparent,
-                      builder: (context) => const AuthorizationScreenWidget()))
+              Future.delayed(const Duration(seconds: 1), () {
+                if (mounted) {
+                  showMaterialModalBottomSheet(
+                    enableDrag: false,
+                    barrierColor: Colors.black.withValues(alpha: 0.5),
+                    context: context,
+                    backgroundColor: Colors.transparent,
+                    builder: (context) => const AuthorizationScreenWidget(),
+                  );
+                }
+              })
             }
         });
   }
@@ -99,7 +102,7 @@ class _TabControllerScreenBodyState
             Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: Sizes.tabControllerHeight,
+                  height: Sizes.tabControllerHeight(context),
                   decoration: BoxDecoration(
                       color: HexColors.row,
                       borderRadius: const BorderRadius.only(

@@ -56,7 +56,7 @@ class SlideShowItemWidget extends StatelessWidget {
                                     ]
                                   : [
                                       Colors.transparent,
-                                      HexColors.black.withOpacity(0.72)
+                                      HexColors.black.withValues(alpha: 0.72)
                                     ],
                               begin: const FractionalOffset(0.0, 0.4),
                               end: const FractionalOffset(0.0, 1.0),

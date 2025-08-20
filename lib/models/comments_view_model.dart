@@ -129,7 +129,7 @@ class CommentsViewModel with ChangeNotifier {
 
   void showProfileScreen(BuildContext context, int userId) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ProfileScreenWidget(userId: userId));
@@ -153,10 +153,13 @@ class CommentsViewModel with ChangeNotifier {
       OpenResult openResult = await OpenFilex.open(filePath);
 
       if (openResult.type == ResultType.noAppToOpen) {
-        showOkAlertDialog(
+        if (context.mounted) {
+          showOkAlertDialog(
             context: context,
             title: Titles.warning,
-            message: Titles.no_open_file_app);
+            message: Titles.no_open_file_app,
+          );
+        }
       }
     } else {
       Navigator.push(

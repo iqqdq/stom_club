@@ -12,7 +12,7 @@ import 'package:stom_club/models/about_view_model.dart';
 import 'package:stom_club/services/loading_status.dart';
 
 class AboutScreenBodyWidget extends StatefulWidget {
-  const AboutScreenBodyWidget({Key? key}) : super(key: key);
+  const AboutScreenBodyWidget({super.key});
 
   @override
   _AboutScreenBodyState createState() => _AboutScreenBodyState();
@@ -36,7 +36,9 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
     super.initState();
 
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 0));
+      vsync: this,
+      duration: const Duration(milliseconds: 0),
+    );
   }
 
   @override
@@ -49,7 +51,7 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final _aboutViewModel = Provider.of<AboutViewModel>(context, listen: true);
+    final aboutViewModel = Provider.of<AboutViewModel>(context, listen: true);
 
     return Scaffold(
         backgroundColor: HexColors.background,
@@ -59,7 +61,7 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
             Container(
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).padding.top +
-                      (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                      (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
               height: 52.0,
               color: HexColors.background,
               child: Row(
@@ -77,12 +79,13 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
             Expanded(
                 child: ListView(
                     padding: EdgeInsets.only(
-                        left: 20.0,
-                        right: 20.0,
-                        bottom: Sizes.tabControllerHeight),
+                      left: 20.0,
+                      right: 20.0,
+                      bottom: Sizes.tabControllerHeight(context),
+                    ),
                     children: [
                   /// TITLE
-                  _aboutViewModel.company == null
+                  aboutViewModel.company == null
                       ? Container()
                       : Text(Titles.about,
                           textAlign: TextAlign.center,
@@ -95,9 +98,9 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                   const SizedBox(height: 24.0),
 
                   /// TEXT
-                  _aboutViewModel.company == null
+                  aboutViewModel.company == null
                       ? Container()
-                      : Text(_aboutViewModel.company?.description ?? '',
+                      : Text(aboutViewModel.company?.description ?? '',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontFamily: 'Inter',
@@ -112,18 +115,18 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       /// PHOTO
-                      _aboutViewModel.company == null
+                      aboutViewModel.company == null
                           ? Container()
                           : Center(
                               child: ClipRRect(
                               borderRadius: BorderRadius.circular(70.0),
                               child:
-                                  _aboutViewModel.company?.manager.photo == null
+                                  aboutViewModel.company?.manager.photo == null
                                       ? Container()
                                       : CachedNetworkImage(
                                           width: 140.0,
                                           height: 140.0,
-                                          imageUrl: _aboutViewModel
+                                          imageUrl: aboutViewModel
                                                   .company?.manager.photo ??
                                               '',
                                           fit: BoxFit.cover),
@@ -131,10 +134,10 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                       const SizedBox(height: 24.0),
 
                       /// SUBTITLE
-                      _aboutViewModel.company == null
+                      aboutViewModel.company == null
                           ? Container()
                           : Text(
-                              '${Titles.founder}  /  ${_aboutViewModel.company?.manager.profession.name}',
+                              '${Titles.founder}  /  ${aboutViewModel.company?.manager.profession.name}',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Inter',
@@ -145,10 +148,10 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                       const SizedBox(height: 12.0),
 
                       /// TITLE
-                      _aboutViewModel.company == null
+                      aboutViewModel.company == null
                           ? Container()
                           : Text(
-                              '${_aboutViewModel.company?.manager.lastName} ${_aboutViewModel.company?.manager.firstName} ${_aboutViewModel.company?.manager.middleName}',
+                              '${aboutViewModel.company?.manager.lastName} ${aboutViewModel.company?.manager.firstName} ${aboutViewModel.company?.manager.middleName}',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Inter',
@@ -159,7 +162,7 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                       const SizedBox(height: 24.0),
 
                       /// CONTACTS
-                      _aboutViewModel.company == null
+                      aboutViewModel.company == null
                           ? Container()
                           : ListView.builder(
                               physics: const NeverScrollableScrollPhysics(),
@@ -169,16 +172,16 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                                 return ListItemWidget(
                                     image: _images[index],
                                     title: index == 0
-                                        ? _aboutViewModel.company?.manager.city ??
+                                        ? aboutViewModel.company?.manager.city ??
                                             ''
                                         : index == 1
-                                            ? _aboutViewModel.company?.manager.email ??
+                                            ? aboutViewModel.company?.manager.email ??
                                                 ''
                                             : index == 2
-                                                ? _aboutViewModel.company
+                                                ? aboutViewModel.company
                                                         ?.manager.vkUrl ??
                                                     ''
-                                                : _aboutViewModel.company
+                                                : aboutViewModel.company
                                                         ?.manager.telegramUrl ??
                                                     '',
                                     fontSize: 16.0,
@@ -187,19 +190,18 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                                     onTap: index == 0
                                         ? null
                                         : () => index == 1
-                                            ? _aboutViewModel.sendMailToOwner(
-                                                _aboutViewModel.company?.manager
-                                                        .email ??
+                                            ? aboutViewModel.sendMailToOwner(
+                                                aboutViewModel.company?.manager.email ??
                                                     '')
                                             : index == 2
-                                                ? _aboutViewModel.showVk(
+                                                ? aboutViewModel.showVk(
                                                     context,
-                                                    _aboutViewModel.company
+                                                    aboutViewModel.company
                                                             ?.manager.vkUrl ??
                                                         '')
-                                                : _aboutViewModel.showTelegram(
+                                                : aboutViewModel.showTelegram(
                                                     context,
-                                                    _aboutViewModel
+                                                    aboutViewModel
                                                             .company
                                                             ?.manager
                                                             .telegramUrl ??
@@ -207,19 +209,19 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
                                     onButtonTap: index == 0
                                         ? null
                                         : () => {
-                                              _aboutViewModel.copyAddress(
+                                              aboutViewModel.copyAddress(
                                                   context,
                                                   index == 1
-                                                      ? _aboutViewModel.company
+                                                      ? aboutViewModel.company
                                                               ?.manager.email ??
                                                           ''
                                                       : index == 2
-                                                          ? _aboutViewModel
+                                                          ? aboutViewModel
                                                                   .company
                                                                   ?.manager
                                                                   .vkUrl ??
                                                               ''
-                                                          : _aboutViewModel
+                                                          : aboutViewModel
                                                                   .company
                                                                   ?.manager
                                                                   .telegramUrl ??
@@ -246,7 +248,7 @@ class _AboutScreenBodyState extends State<AboutScreenBodyWidget>
           ]),
 
           /// INDICATOR
-          _aboutViewModel.loadingStatus == LoadingStatus.searching
+          aboutViewModel.loadingStatus == LoadingStatus.searching
               ? Container(
                   margin: const EdgeInsets.only(bottom: 32.0),
                   child: const Center(child: LoadIndicatorWidget()))

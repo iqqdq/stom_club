@@ -15,7 +15,7 @@ class AuthorizationRepository {
 
   Future<Object> verify(int id, String code) async {
     dynamic json = await WebService().post(
-        URLs.users_url + '$id/phone_confirm/',
+        '${URLs.users_url}$id/phone_confirm/',
         VerificationReuest(id: id, code: code),
         false);
 

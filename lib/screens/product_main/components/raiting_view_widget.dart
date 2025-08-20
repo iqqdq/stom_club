@@ -47,9 +47,9 @@ class _RaitingViewState extends State<RatingViewWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _width = MediaQuery.of(context).size.width - 170.0;
-    double _step = _width / _max;
-    _step = _step < 0 ? 12.0 : _step;
+    final width = MediaQuery.of(context).size.width - 170.0;
+    double step = width / _max;
+    step = step < 0 ? 12.0 : step;
 
     return Container(
         padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 24.0),
@@ -107,7 +107,7 @@ class _RaitingViewState extends State<RatingViewWidget> {
               /// INDICATORS
               Container(
                   padding: const EdgeInsets.only(top: 12.0),
-                  width: _width,
+                  width: width,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -117,40 +117,40 @@ class _RaitingViewState extends State<RatingViewWidget> {
                           margin: const EdgeInsets.only(bottom: 8.0),
                           height: 4.0,
                           color: HexColors.one_star_raiting,
-                          width: (widget.fiveStars * _step) > 0
-                              ? widget.fiveStars * _step
+                          width: (widget.fiveStars * step) > 0
+                              ? widget.fiveStars * step
                               : 12.0),
                       AnimatedContainer(
                           duration: const Duration(seconds: 2),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           height: 4.0,
                           color: HexColors.two_star_raiting,
-                          width: (widget.fourStars * _step) > 0
-                              ? widget.fourStars * _step
+                          width: (widget.fourStars * step) > 0
+                              ? widget.fourStars * step
                               : 12.0),
                       AnimatedContainer(
                           duration: const Duration(seconds: 2),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           height: 4.0,
                           color: HexColors.thee_star_raiting,
-                          width: (widget.threeStars * _step) > 0
-                              ? widget.threeStars * _step
+                          width: (widget.threeStars * step) > 0
+                              ? widget.threeStars * step
                               : 12.0),
                       AnimatedContainer(
                           duration: const Duration(seconds: 2),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           height: 4.0,
                           color: HexColors.four_star_raiting,
-                          width: (widget.twoStars * _step) > 0
-                              ? widget.twoStars * _step
+                          width: (widget.twoStars * step) > 0
+                              ? widget.twoStars * step
                               : 12.0),
                       AnimatedContainer(
                           duration: const Duration(seconds: 2),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           height: 4.0,
                           color: HexColors.five_star_raiting,
-                          width: (widget.oneStar * _step) > 0
-                              ? widget.oneStar * _step
+                          width: (widget.oneStar * step) > 0
+                              ? widget.oneStar * step
                               : 12.0),
                     ],
                   ))

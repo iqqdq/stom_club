@@ -42,7 +42,7 @@ class _PhoneScreenBodyState extends State<PhoneScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _authorizationViewModel =
+    final authorizationViewModel =
         Provider.of<AuthorizationViewModel>(context, listen: true);
 
     return Stack(children: [
@@ -119,15 +119,17 @@ class _PhoneScreenBodyState extends State<PhoneScreenBodyWidget> {
                       FocusScope.of(context).unfocus(),
 
                       /// VERIFY USER AUTH
-                      Future.delayed(
-                          const Duration(milliseconds: 200),
-                          () => _authorizationViewModel
+                      Future.delayed(const Duration(milliseconds: 200), () {
+                        if (context.mounted) {
+                          authorizationViewModel
                               .authorize(context, _textEditingController)
                               .then((value) => {
-                                    if (_authorizationViewModel.authorization !=
+                                    if (authorizationViewModel.authorization !=
                                         null)
                                       widget.onUpdate(1)
-                                  }))
+                                  });
+                        }
+                      })
                     })
           ])),
 
@@ -151,7 +153,7 @@ class _PhoneScreenBodyState extends State<PhoneScreenBodyWidget> {
           ])),
 
       /// INDICATOR
-      _authorizationViewModel.loadingStatus == LoadingStatus.searching
+      authorizationViewModel.loadingStatus == LoadingStatus.searching
           ? Container(
               margin: const EdgeInsets.only(bottom: 32.0),
               child: const Center(child: LoadIndicatorWidget()))

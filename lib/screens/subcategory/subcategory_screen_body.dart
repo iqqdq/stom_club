@@ -21,7 +21,7 @@ class SubcategoryScreenBodyWidget extends StatefulWidget {
 class _SubcategoryScreenBodyState extends State<SubcategoryScreenBodyWidget> {
   @override
   Widget build(BuildContext context) {
-    final _subcategoryViewModel =
+    final subcategoryViewModel =
         Provider.of<SubcategoryViewModel>(context, listen: true);
 
     return Scaffold(
@@ -52,7 +52,7 @@ class _SubcategoryScreenBodyState extends State<SubcategoryScreenBodyWidget> {
               itemBuilder: (context, index) {
                 return ListItemWidget(
                     title: widget.subcategory.subcategories[index].name,
-                    onTap: () => _subcategoryViewModel.showProductsScreen(
+                    onTap: () => subcategoryViewModel.showProductsScreen(
                         context, widget.subcategory.subcategories[index]));
               }),
 

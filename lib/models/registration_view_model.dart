@@ -65,7 +65,7 @@ class RegistrationViewModel with ChangeNotifier {
 
   void showSelectionScreen(BuildContext context) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ProfessionsScreenWidget(

@@ -133,12 +133,12 @@ class _CommentsScreenBodyState extends State<CommentsScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _commentsViewModel =
+    final commentsViewModel =
         Provider.of<CommentsViewModel>(context, listen: true);
 
     if (_isRefresh) {
       _isRefresh = !_isRefresh;
-      _commentsViewModel.getCommentList(_pagination);
+      commentsViewModel.getCommentList(_pagination);
     }
 
     return Scaffold(
@@ -207,44 +207,43 @@ class _CommentsScreenBodyState extends State<CommentsScreenBodyWidget> {
                     child: ListView.builder(
                         physics: const AlwaysScrollableScrollPhysics(),
                         controller: _scrollController,
-                        itemCount: _commentsViewModel.comments.length,
+                        itemCount: commentsViewModel.comments.length,
                         padding: EdgeInsets.only(
                             top: 20.0,
-                            bottom: DeviceDetector().isLarge() ? 0.0 : 12.0),
+                            bottom:
+                                DeviceDetector.isLarge(context) ? 0.0 : 12.0),
                         itemBuilder: (context, index) {
                           return CommentListItem(
                               isMineComment: _authorization == null
                                   ? false
                                   : _authorization?.id ==
-                                      _commentsViewModel
-                                          .comments[index].user.id,
-                              url: _commentsViewModel.comments[index].user.photo ??
+                                      commentsViewModel.comments[index].user.id,
+                              url: commentsViewModel.comments[index].user.photo ??
                                   '',
                               attachment:
-                                  _commentsViewModel.comments[index].attachment,
+                                  commentsViewModel.comments[index].attachment,
                               name:
-                                  '${_commentsViewModel.comments[index].user.firstName} ${_commentsViewModel.comments[index].user.lastName}',
-                              text: _commentsViewModel.comments[index].comment,
+                                  '${commentsViewModel.comments[index].user.firstName} ${commentsViewModel.comments[index].user.lastName}',
+                              text: commentsViewModel.comments[index].comment,
                               dateTime: DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(
-                                  _commentsViewModel.comments[index].createdAt),
-                              onUserTap: () => _commentsViewModel.showProfileScreen(
+                                  commentsViewModel.comments[index].createdAt),
+                              onUserTap: () => commentsViewModel.showProfileScreen(
                                   context,
-                                  _commentsViewModel.comments[index].user.id!),
-                              onDocumentTap: () => _commentsViewModel
+                                  commentsViewModel.comments[index].user.id!),
+                              onDocumentTap: () => commentsViewModel
                                           .comments[index].attachment ==
                                       null
                                   ? null
-                                  : _commentsViewModel.openFile(
+                                  : commentsViewModel.openFile(
                                       context,
-                                      _commentsViewModel.comments[index].attachment ==
+                                      commentsViewModel.comments[index].attachment ==
                                               null
                                           ? ''
-                                          : _commentsViewModel
-                                                  .comments[index].attachment!
+                                          : commentsViewModel.comments[index].attachment!
                                                   .contains('https')
-                                              ? _commentsViewModel.comments[index].attachment!
-                                              : URLs.media_url + _commentsViewModel.comments[index].attachment!),
-                              onRemoveTap: () => _commentsViewModel.removeComment(_commentsViewModel.comments[index].id));
+                                              ? commentsViewModel.comments[index].attachment!
+                                              : URLs.media_url + commentsViewModel.comments[index].attachment!),
+                              onRemoveTap: () => commentsViewModel.removeComment(commentsViewModel.comments[index].id));
                         }))),
 
             /// MESSAGE BAR
@@ -253,7 +252,7 @@ class _CommentsScreenBodyState extends State<CommentsScreenBodyWidget> {
                 focusNode: _focusNode,
                 onChanged: (text) => setState((() => {})),
                 didReturnValue: (path, name) => _isAuthorized
-                    ? _commentsViewModel
+                    ? commentsViewModel
                         .sendComment('file', path, name)
                         .then((value) => {
                               setState(() {
@@ -275,7 +274,7 @@ class _CommentsScreenBodyState extends State<CommentsScreenBodyWidget> {
                             {
                               // FocusScope.of(context).unfocus(),
                               // _pagination.size += 10,
-                              _commentsViewModel
+                              commentsViewModel
                                   .sendComment(
                                       _textEditingController.text, null, null)
                                   .then((value) => {
@@ -290,19 +289,21 @@ class _CommentsScreenBodyState extends State<CommentsScreenBodyWidget> {
                         {
                           _textEditingController.clear(),
                           FocusScope.of(context).unfocus(),
-                          Future.delayed(
-                              const Duration(milliseconds: 600),
-                              () => showOkAlertDialog(
+                          Future.delayed(const Duration(milliseconds: 600), () {
+                            if (context.mounted) {
+                              showOkAlertDialog(
                                   context: context,
                                   title: Titles.warning,
-                                  message: Titles.only_auth_comment))
+                                  message: Titles.only_auth_comment);
+                            }
+                          })
                         }
                     })
           ]),
 
           /// EMPTY LIST TEXT
-          _commentsViewModel.loadingStatus == LoadingStatus.completed &&
-                  _commentsViewModel.comments.isEmpty
+          commentsViewModel.loadingStatus == LoadingStatus.completed &&
+                  commentsViewModel.comments.isEmpty
               ? Center(
                   child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -315,7 +316,7 @@ class _CommentsScreenBodyState extends State<CommentsScreenBodyWidget> {
               : Container(),
 
           /// INDICATOR
-          _commentsViewModel.loadingStatus == LoadingStatus.searching
+          commentsViewModel.loadingStatus == LoadingStatus.searching
               ? Container(
                   margin: EdgeInsets.only(bottom: Sizes.appBarHeight + 32.0),
                   child: const Center(

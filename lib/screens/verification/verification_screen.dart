@@ -6,8 +6,7 @@ import 'package:stom_club/screens/verification/verification_screen_body.dart';
 class VerificationScreenWidget extends StatelessWidget {
   final Function(int) onUpdate;
 
-  const VerificationScreenWidget({Key? key, required this.onUpdate})
-      : super(key: key);
+  const VerificationScreenWidget({super.key, required this.onUpdate});
 
   @override
   Widget build(BuildContext context) {

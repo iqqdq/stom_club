@@ -22,7 +22,7 @@ class ArticleScreenBodyWidget extends StatefulWidget {
 class _ArticleScreenBodyState extends State<ArticleScreenBodyWidget> {
   @override
   Widget build(BuildContext context) {
-    final _articleViewModel =
+    final articleViewModel =
         Provider.of<ArticleViewModel>(context, listen: true);
 
     return Scaffold(
@@ -52,13 +52,13 @@ class _ArticleScreenBodyState extends State<ArticleScreenBodyWidget> {
                 bottom: MediaQuery.of(context).padding.bottom == 0.0
                     ? 12.0
                     : MediaQuery.of(context).padding.bottom),
-            child: _articleViewModel.article?.text != null
+            child: articleViewModel.article?.text != null
                 ? InteractiveViewer(
                     panEnabled: true,
                     boundaryMargin: EdgeInsets.zero,
                     minScale: 1.0,
                     maxScale: 5.0,
-                    child: Html(data: _articleViewModel.article?.text, style: {
+                    child: Html(data: articleViewModel.article?.text, style: {
                       "body": Style(
                         color: HexColors.black,
                       )
@@ -66,7 +66,7 @@ class _ArticleScreenBodyState extends State<ArticleScreenBodyWidget> {
                 : Container()),
 
         /// INDICATOR
-        _articleViewModel.loadingStatus == LoadingStatus.searching
+        articleViewModel.loadingStatus == LoadingStatus.searching
             ? Container(
                 margin: EdgeInsets.only(bottom: Sizes.appBarHeight),
                 child: const Center(

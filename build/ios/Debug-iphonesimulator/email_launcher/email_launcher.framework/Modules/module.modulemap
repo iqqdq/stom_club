@@ -1,0 +1,11 @@
+framework module email_launcher {
+  umbrella header "email_launcher-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module email_launcher.Swift {
+  header "email_launcher-Swift.h"
+  requires objc
+}

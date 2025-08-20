@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters
+
 import 'package:flutter/material.dart';
 import 'package:stom_club/constants/hex_colors.dart';
 
@@ -44,7 +46,7 @@ class InputWidget extends StatefulWidget {
 class _InputState extends State<InputWidget> {
   @override
   Widget build(BuildContext context) {
-    final _textFormField = TextFormField(
+    final textFormField = TextFormField(
       maxLines: widget.maxLines ?? 1,
       keyboardAppearance: widget.keyboardAppearance ?? Brightness.dark,
       keyboardType: widget.textInputType ?? TextInputType.text,
@@ -133,10 +135,10 @@ class _InputState extends State<InputWidget> {
         child: widget.constraints == null
             ? Row(children: [
                 Image.asset('assets/ic_search.png'),
-                Expanded(child: _textFormField)
+                Expanded(child: textFormField)
               ])
             : Center(
-                child: _textFormField,
+                child: textFormField,
               ));
   }
 }

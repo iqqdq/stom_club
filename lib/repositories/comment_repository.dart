@@ -9,8 +9,7 @@ import 'package:stom_club/services/web_service.dart';
 class CommentRepository {
   Future<Object> getComments(Pagination pagination, int reviewId) async {
     dynamic json = await WebService().get(
-        URLs.base_url +
-            'reviews/$reviewId/comments/?page=${pagination.number}&size=${pagination.size}',
+        '${URLs.base_url}reviews/$reviewId/comments/?page=${pagination.number}&size=${pagination.size}',
         true);
 
     try {
@@ -27,7 +26,7 @@ class CommentRepository {
         .getFormData(reviewId, null, comment, filePath, fileName);
 
     dynamic json = await WebService()
-        .postFormData(URLs.base_url + 'comments/', formData, true);
+        .postFormData('${URLs.base_url}comments/', formData, true);
 
     return Comment.fromJson(json);
   }
@@ -35,7 +34,7 @@ class CommentRepository {
   Future<Object> putComment(int reviewId, int commentId, String comment,
       String? filePath, String? fileName) async {
     dynamic json = await WebService().put(
-        URLs.base_url + 'comments/$commentId/',
+        '${URLs.base_url}comments/$commentId/',
         await CommentRequest()
             .getFormData(reviewId, null, comment, filePath, fileName));
 
@@ -43,6 +42,6 @@ class CommentRepository {
   }
 
   Future<void> deleteComment(int commentId) async {
-    await WebService().delete(URLs.base_url + 'comments/$commentId/');
+    await WebService().delete('${URLs.base_url}comments/$commentId/');
   }
 }

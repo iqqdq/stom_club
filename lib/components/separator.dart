@@ -9,7 +9,7 @@ class SeparatorWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(left: 20.0),
       height: 0.5,
-      color: HexColors.unselected.withOpacity(0.5),
+      color: HexColors.unselected.withValues(alpha: 0.5),
     );
   }
 }

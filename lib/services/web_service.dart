@@ -34,7 +34,7 @@ class WebService {
         return response.data;
       }
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return e.response?.data;
       }
     }
@@ -50,7 +50,7 @@ class WebService {
         return response.data;
       }
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return e.response?.data;
       }
     }
@@ -65,7 +65,7 @@ class WebService {
         return response.data;
       }
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return e.response?.data;
       }
     }
@@ -80,7 +80,7 @@ class WebService {
         return response.data;
       }
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return e.response?.data;
       }
     }
@@ -94,7 +94,7 @@ class WebService {
         return true;
       }
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         print(e.response?.data);
       }
     }
@@ -111,7 +111,7 @@ class WebService {
         return response.data;
       }
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return e.response?.data;
       }
     }

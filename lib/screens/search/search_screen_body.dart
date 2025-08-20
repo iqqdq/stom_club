@@ -63,11 +63,11 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _productsViewModel =
+    final productsViewModel =
         Provider.of<ProductsViewModel>(context, listen: true);
 
     if (_isRefresh) {
-      _productsViewModel
+      productsViewModel
           .getProductList(_isRefresh, _pagination, _textEditingController.text)
           .then((value) => _isRefresh = !_isRefresh);
     }
@@ -78,7 +78,7 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
         body: Padding(
             padding: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             child: Stack(children: [
               Column(children: [
                 /// APP BAR
@@ -104,7 +104,7 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
 
                               _debouncer.run(() {
                                 _pagination.number = 1;
-                                _productsViewModel
+                                productsViewModel
                                     .getProductList(true, _pagination,
                                         _textEditingController.text)
                                     .then((value) =>
@@ -117,7 +117,7 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
                         title: Titles.filter,
                         onTap: () => {
                               _pagination.number = 1,
-                              _productsViewModel.showManufacturerFilterScreen(
+                              productsViewModel.showManufacturerFilterScreen(
                                   context,
                                   _pagination,
                                   _textEditingController.text)
@@ -128,29 +128,28 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
                 /// HORIZONTAL LIST
                 Container(
                     margin: EdgeInsets.only(
-                        top: _productsViewModel.manufacturers.isEmpty
+                        top: productsViewModel.manufacturers.isEmpty
                             ? 0.0
                             : 18.0,
-                        bottom: _productsViewModel.manufacturers.isEmpty
-                            ? 0.0
-                            : 4.0,
+                        bottom:
+                            productsViewModel.manufacturers.isEmpty ? 0.0 : 4.0,
                         left: 20.0),
                     height:
-                        _productsViewModel.manufacturers.isEmpty ? 0.0 : 38.0,
+                        productsViewModel.manufacturers.isEmpty ? 0.0 : 38.0,
                     child: ListView.builder(
                         padding: const EdgeInsets.only(right: 10.0),
                         scrollDirection: Axis.horizontal,
-                        itemCount: _productsViewModel.manufacturers.length,
+                        itemCount: productsViewModel.manufacturers.length,
                         itemBuilder: (context, index) {
                           return FilterListItemWidget(
                               title:
-                                  _productsViewModel.manufacturers[index].name,
+                                  productsViewModel.manufacturers[index].name,
                               onTap: () => {},
                               onRemoveTap: () => {
                                     _pagination.number = 1,
-                                    _productsViewModel.removeManufacturer(
+                                    productsViewModel.removeManufacturer(
                                         _pagination,
-                                        _productsViewModel
+                                        productsViewModel
                                             .manufacturers[index].id,
                                         _textEditingController.text)
                                   });
@@ -166,7 +165,7 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
                         child: ListView.builder(
                             physics: const AlwaysScrollableScrollPhysics(),
                             controller: _scrollController,
-                            itemCount: _productsViewModel.products.length,
+                            itemCount: productsViewModel.products.length,
                             padding: EdgeInsets.only(
                                 bottom: MediaQuery.of(context).padding.bottom ==
                                         0.0
@@ -174,27 +173,26 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
                                     : MediaQuery.of(context).padding.bottom),
                             itemBuilder: (context, index) {
                               return ProductListItem(
-                                  title:
-                                      _productsViewModel.products[index].name,
-                                  imageUrl: _productsViewModel
+                                  title: productsViewModel.products[index].name,
+                                  imageUrl: productsViewModel
                                           .products[index].images.isEmpty
                                       ? null
-                                      : _productsViewModel
+                                      : productsViewModel
                                           .products[index].images.first.image,
                                   rating:
-                                      _productsViewModel.products[index].rating,
-                                  reviewsCount: _productsViewModel
+                                      productsViewModel.products[index].rating,
+                                  reviewsCount: productsViewModel
                                       .products[index].reviewsCount,
                                   onTap: () =>
-                                      _productsViewModel.showProductScreen(
+                                      productsViewModel.showProductScreen(
                                           context,
-                                          _productsViewModel.products[index]));
+                                          productsViewModel.products[index]));
                             })))
               ]),
 
               /// NO DATA LABEL
-              _productsViewModel.loadingStatus == LoadingStatus.completed &&
-                      _productsViewModel.products.isEmpty &&
+              productsViewModel.loadingStatus == LoadingStatus.completed &&
+                      productsViewModel.products.isEmpty &&
                       !_isSearching
                   ? Center(
                       child: Padding(
@@ -209,8 +207,7 @@ class _SearchScreenBodyState extends State<SearchScreenBodyWidget> {
 
               /// INDICATOR
               _isSearching ||
-                      _productsViewModel.loadingStatus ==
-                          LoadingStatus.searching
+                      productsViewModel.loadingStatus == LoadingStatus.searching
                   ? const Center(child: SizedBox(child: LoadIndicatorWidget()))
                   : Container()
             ])));

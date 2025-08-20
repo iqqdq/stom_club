@@ -9,8 +9,8 @@ import 'package:stom_club/services/web_service.dart';
 
 class ReviewRepository {
   Future<Object> getReviews(int productId) async {
-    dynamic json = await WebService()
-        .get(URLs.products_url + productId.toString() + '/reviews/', true);
+    dynamic json =
+        await WebService().get('${URLs.products_url}$productId/reviews/', true);
 
     try {
       Reviews reviews = Reviews.fromJson(json);
@@ -26,7 +26,7 @@ class ReviewRepository {
         productId, null, advantages, defects, rating, filePath, fileName);
 
     dynamic json = await WebService()
-        .postFormData(URLs.base_url + 'reviews/', formData, true);
+        .postFormData('${URLs.base_url}reviews/', formData, true);
 
     return Review.fromJson(json);
   }
@@ -37,21 +37,18 @@ class ReviewRepository {
         productId, reviewId, advantages, defects, rating, filePath, fileName);
 
     dynamic json =
-        await WebService().put(URLs.base_url + 'reviews/$reviewId/', formData);
+        await WebService().put('${URLs.base_url}reviews/$reviewId/', formData);
 
     return Review.fromJson(json);
   }
 
   Future<void> deleteReview(int productId) async {
-    await WebService().delete(URLs.base_url + 'reviews/$productId/');
+    await WebService().delete('${URLs.base_url}reviews/$productId/');
   }
 
   Future<Object> likeReview(int reviewId, bool isLike) async {
     dynamic json = await WebService().post(
-        URLs.base_url +
-            'reviews/' +
-            reviewId.toString() +
-            '/rate/?isLike=$isLike',
+        '${URLs.base_url}reviews/$reviewId/rate/?isLike=$isLike',
         RateRequest(isLike: isLike, id: reviewId),
         true);
 

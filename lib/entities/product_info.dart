@@ -116,9 +116,8 @@ class ProductInfo {
         "documents": List<Document>.from(images.map((x) => x.toJson())),
         "articles": articles.toJson(),
         "video": List<Video>.from(video.map((x) => x.toJson())),
-        "manufacturer": manufacturer == null ? null : manufacturer!.toJson(),
-        "category":
-            productSubcategory == null ? null : productSubcategory!.toJson(),
+        "manufacturer": manufacturer?.toJson(),
+        "category": productSubcategory?.toJson(),
         "reviewsCount": reviewsCount,
         "rating": rating,
         "isDeleted": isDeleted,

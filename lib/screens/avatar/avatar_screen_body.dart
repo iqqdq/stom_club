@@ -35,7 +35,7 @@ class _AvatarScreenBodyState extends State<AvatarScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _registrationViewModel =
+    final registrationViewModel =
         Provider.of<RegistrationViewModel>(context, listen: true);
 
     return Stack(children: [
@@ -100,7 +100,7 @@ class _AvatarScreenBodyState extends State<AvatarScreenBodyWidget> {
                           /// UPDATE USER SOCIAL
                           UserService().getProfessionId().then((id) => {
                                 UserService().getUser().then((user) => {
-                                      _registrationViewModel
+                                      registrationViewModel
                                           .registerUser(
                                               user!.firstName,
                                               user.lastName,
@@ -110,10 +110,15 @@ class _AvatarScreenBodyState extends State<AvatarScreenBodyWidget> {
                                               user.vkUrl ?? '',
                                               user.telegramUrl ?? '')
                                           .then((value) => {
-                                                if (_registrationViewModel
+                                                if (registrationViewModel
                                                         .user !=
                                                     null)
-                                                  Navigator.pop(context)
+                                                  {
+                                                    if (context.mounted)
+                                                      {
+                                                        Navigator.pop(context),
+                                                      }
+                                                  }
                                               })
                                     })
                               })
@@ -141,7 +146,7 @@ class _AvatarScreenBodyState extends State<AvatarScreenBodyWidget> {
           ])),
 
       /// INDICATOR
-      _registrationViewModel.loadingStatus == LoadingStatus.searching
+      registrationViewModel.loadingStatus == LoadingStatus.searching
           ? Container(
               margin: const EdgeInsets.only(bottom: 32.0),
               child: const Center(child: LoadIndicatorWidget()))

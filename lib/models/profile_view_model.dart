@@ -134,7 +134,7 @@ class ProfileViewModel with ChangeNotifier {
 
   void logout(BuildContext context) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ActionSheetWidget(
@@ -147,7 +147,7 @@ class ProfileViewModel with ChangeNotifier {
 
   void deleteMyAccount(BuildContext context) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ActionSheetWidget(

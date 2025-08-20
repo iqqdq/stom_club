@@ -16,53 +16,68 @@ class WebViewScreenWidget extends StatefulWidget {
 }
 
 class _WebViewScreenState extends State<WebViewScreenWidget> {
+  late WebViewController _controller;
   bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageStarted: (start) => setState(() => _isLoading = true),
+          onPageFinished: (finish) => setState(() => _isLoading = false),
+          onWebResourceError: (error) => {
+            setState(() => _isLoading = false),
+            showOkAlertDialog(
+                context: context,
+                title: Titles.warning,
+                message: error.description)
+          },
+          onNavigationRequest: (NavigationRequest request) {
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(widget.url));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HexColors.white,
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
         backgroundColor: HexColors.white,
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          backgroundColor: HexColors.white,
-          centerTitle: true,
-          elevation: 0.0,
-          leading: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: BackButtonWidget(
-                  color: HexColors.white, onTap: () => Navigator.pop(context))),
-          title: Text(
-              widget.url.length >= 12
-                  ? '...${widget.url.substring(widget.url.length - 11, widget.url.length)}'
-                      .toUpperCase()
-                  : widget.url.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 20.0,
-                color: HexColors.black,
-              )),
-        ),
-        body: Stack(children: [
-          WebView(
-              initialUrl: widget.url,
-              zoomEnabled: true,
-              javascriptMode: JavascriptMode.unrestricted,
-              onPageStarted: (start) => setState(() => _isLoading = true),
-              onPageFinished: (finish) => setState(() => _isLoading = false),
-              onWebResourceError: (error) => {
-                    setState(() => _isLoading = false),
-                    showOkAlertDialog(
-                        context: context,
-                        title: Titles.warning,
-                        message: error.description)
-                  }),
-          _isLoading
-              ? Container(
-                  margin: const EdgeInsets.only(bottom: 32.0),
-                  child: const Center(
-                      child: LoadIndicatorWidget(indicatorOnly: true)))
-              : Container()
-        ]));
+        centerTitle: true,
+        elevation: 0.0,
+        leading: Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: BackButtonWidget(
+                color: HexColors.white, onTap: () => Navigator.pop(context))),
+        title: Text(
+            widget.url.length >= 12
+                ? '...${widget.url.substring(widget.url.length - 11, widget.url.length)}'
+                    .toUpperCase()
+                : widget.url.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w400,
+              fontSize: 20.0,
+              color: HexColors.black,
+            )),
+      ),
+      body: Stack(children: [
+        WebViewWidget(controller: _controller),
+        _isLoading
+            ? Container(
+                margin: const EdgeInsets.only(bottom: 32.0),
+                child: const Center(
+                    child: LoadIndicatorWidget(indicatorOnly: true)))
+            : Container()
+      ]),
+    );
   }
 }

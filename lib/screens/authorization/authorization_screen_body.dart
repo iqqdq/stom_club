@@ -60,7 +60,7 @@ class _AuthorizationScreenBodyState
         body: Container(
             margin: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             padding: const EdgeInsets.only(top: 16.0),
             decoration: BoxDecoration(
                 color: HexColors.background,

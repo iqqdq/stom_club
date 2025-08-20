@@ -44,13 +44,18 @@ class _SplashScreenBodyState extends State<SplashScreenBodyWidget>
 
   void animate() {
     _animationController.forward().then((value) => {
-          _animationController.reverse().then((value) => Future.delayed(
-              const Duration(milliseconds: 500),
-              () => Navigator.pushAndRemoveUntil(
-                  context,
-                  TransparentRoute(
-                      builder: (context) => const TabControllerScreenWidget()),
-                  (route) => false)))
+          _animationController.reverse().then(
+              (value) => Future.delayed(const Duration(milliseconds: 500), () {
+                    if (mounted) {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        TransparentRoute(
+                            builder: (context) =>
+                                const TabControllerScreenWidget()),
+                        (route) => false,
+                      );
+                    }
+                  }))
         });
   }
 

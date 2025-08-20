@@ -100,7 +100,7 @@ class ArticlesViewModel with ChangeNotifier {
       String search, List<Subcategory> subcategories) {
     showMaterialModalBottomSheet(
         enableDrag: false,
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ArticleFilterScreenWidget(

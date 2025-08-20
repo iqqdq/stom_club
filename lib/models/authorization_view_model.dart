@@ -58,10 +58,13 @@ class AuthorizationViewModel with ChangeNotifier {
       loadingStatus = LoadingStatus.error;
       textEditingController.text = '+7 ';
 
-      showOkAlertDialog(
+      if (context.mounted) {
+        showOkAlertDialog(
           title: Titles.error,
           message: _authError.phone.first,
-          context: context);
+          context: context,
+        );
+      }
     }
 
     notifyListeners();

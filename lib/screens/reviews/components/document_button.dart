@@ -1,17 +1,21 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:image_preview/preview.dart';
+import 'package:image_preview/preview_data.dart';
 import 'package:stom_club/constants/hex_colors.dart';
 import 'package:stom_club/constants/ulrs.dart';
-import 'package:image_preview/image_preview.dart';
 
 class DocumentButtonWidget extends StatefulWidget {
   final String name;
   final String? attachment;
   final VoidCallback onTap;
 
-  const DocumentButtonWidget(
-      {Key? key, required this.name, this.attachment, required this.onTap})
-      : super(key: key);
+  const DocumentButtonWidget({
+    super.key,
+    required this.name,
+    this.attachment,
+    required this.onTap,
+  });
 
   @override
   _DocumentButtonState createState() => _DocumentButtonState();
@@ -26,24 +30,24 @@ class _DocumentButtonState extends State<DocumentButtonWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final _isImage = widget.attachment == null
+    final isImage = widget.attachment == null
         ? false
         : widget.attachment!.endsWith('.jpg') ||
             widget.attachment!.endsWith('.jpeg') ||
             widget.attachment!.endsWith('.png');
 
-    final _widget = Container(
+    final child = Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
           border: Border.all(width: 1.0, color: HexColors.separator),
-          color: _isImage ? HexColors.separator : Colors.transparent,
+          color: isImage ? HexColors.separator : Colors.transparent,
         ),
         child: Material(
             color: Colors.transparent,
             child: InkWell(
-                onTap: () => _isImage ? null : widget.onTap(),
+                onTap: () => isImage ? null : widget.onTap(),
                 borderRadius: BorderRadius.circular(12.0),
-                child: _isImage
+                child: isImage
                     ?
 
                     /// IMAGE
@@ -58,14 +62,22 @@ class _DocumentButtonState extends State<DocumentButtonWidget>
                                     ? widget.attachment!
                                     : URLs.media_url + widget.attachment!,
                                 fit: BoxFit.cover)),
-                        onTap: () =>
-                            openImagesPage(Navigator.of(context), imgUrls: [
-                              widget.attachment!.contains('https')
-                                  ? widget.attachment!
-                                  : URLs.media_url + widget.attachment!
-                            ]))
+                        onTap: () => openPreviewPages(
+                          Navigator.of(context),
+                          data: [
+                            PreviewData(
+                              type: Type.image,
+                              image: ImageData(
+                                  url: widget.attachment!.contains('https')
+                                      ? widget.attachment!
+                                      : URLs.media_url + widget.attachment!),
+                            ),
+                          ],
+                        ),
+                      )
                     :
-                    // FILE
+
+                    /// FILE
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Row(children: [
@@ -84,12 +96,15 @@ class _DocumentButtonState extends State<DocumentButtonWidget>
                               ))
                         ])))));
 
-    return _isImage
+    return isImage
         ? Container(
-            margin: EdgeInsets.only(bottom: _isImage ? 8.0 : 0.0),
+            margin: EdgeInsets.only(bottom: isImage ? 8.0 : 0.0),
             width: double.infinity,
             height: 102.0,
-            child: _widget)
-        : FittedBox(child: SizedBox(height: 32.0, child: _widget));
+            child: child,
+          )
+        : FittedBox(
+            child: SizedBox(height: 32.0, child: child),
+          );
   }
 }

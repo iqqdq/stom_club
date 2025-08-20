@@ -18,7 +18,7 @@ class ProductBottomBarWidget extends StatelessWidget {
           left: 12.0,
           bottom: MediaQuery.of(context).padding.bottom,
           right: 12.0),
-      height: Sizes.tabControllerHeight,
+      height: Sizes.tabControllerHeight(context),
       color: HexColors.gray,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +55,7 @@ class ProductBottomBarWidget extends StatelessWidget {
               margin: const EdgeInsets.only(right: 12.0),
               width: 0.5,
               height: 33.0,
-              color: HexColors.unselected.withOpacity(0.5)),
+              color: HexColors.unselected.withValues(alpha: 0.5)),
 
           /// MORE BUTTON
           Expanded(

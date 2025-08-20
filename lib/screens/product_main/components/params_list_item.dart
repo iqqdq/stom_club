@@ -60,6 +60,8 @@ class ParamsListItemWidget extends StatelessWidget {
                   ],
                 ))),
         AnimatedSizeAndFade(
+          fadeDuration: const Duration(seconds: 300),
+          sizeDuration: const Duration(milliseconds: 200),
           child: isExpanded
               ? Container(
                   margin: const EdgeInsets.only(
@@ -80,8 +82,6 @@ class ParamsListItemWidget extends StatelessWidget {
                   //     ))
                   )
               : Container(),
-          fadeDuration: const Duration(seconds: 300),
-          sizeDuration: const Duration(milliseconds: 200),
         ),
         const SeparatorWidget()
       ],

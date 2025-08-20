@@ -86,11 +86,16 @@ class ProductViewModel with ChangeNotifier {
     await ReviewRepository()
         .postReview(product.id, advantages, defects, rating, filePath, fileName)
         .then((response) => {
-              showOkAlertDialog(
-                      context: context,
-                      title: Titles.send_review_success,
-                      message: Titles.reviews_destination)
-                  .then((value) => getProduct())
+              if (context.mounted)
+                {
+                  showOkAlertDialog(
+                    context: context,
+                    title: Titles.send_review_success,
+                    message: Titles.reviews_destination,
+                  ).then(
+                    (value) => getProduct(),
+                  )
+                }
             });
   }
 
@@ -103,11 +108,16 @@ class ProductViewModel with ChangeNotifier {
         .putReview(product.id, reviewId, advantages, defects, rating, filePath,
             fileName)
         .then((response) => {
-              showOkAlertDialog(
-                      context: context,
-                      title: Titles.change_review_success,
-                      message: Titles.reviews_destination)
-                  .then((value) => getProduct())
+              if (context.mounted)
+                {
+                  showOkAlertDialog(
+                    context: context,
+                    title: Titles.change_review_success,
+                    message: Titles.reviews_destination,
+                  ).then(
+                    (value) => getProduct(),
+                  )
+                }
             });
   }
 
@@ -116,11 +126,19 @@ class ProductViewModel with ChangeNotifier {
     notifyListeners();
 
     await ReviewRepository().deleteReview(reviewId).then((response) => {
-          showOkAlertDialog(
-                  context: context,
-                  title: Titles.warning,
-                  message: Titles.delete_review_success)
-              .then((value) => {_review = null, getProduct()})
+          if (context.mounted)
+            {
+              showOkAlertDialog(
+                      context: context,
+                      title: Titles.warning,
+                      message: Titles.delete_review_success)
+                  .then(
+                (value) => {
+                  _review = null,
+                  getProduct(),
+                },
+              )
+            }
         });
   }
 
@@ -142,10 +160,13 @@ class ProductViewModel with ChangeNotifier {
       OpenResult openResult = await OpenFilex.open(filePath);
 
       if (openResult.type == ResultType.noAppToOpen) {
-        showOkAlertDialog(
+        if (context.mounted) {
+          showOkAlertDialog(
             context: context,
             title: Titles.warning,
-            message: Titles.no_open_file_app);
+            message: Titles.no_open_file_app,
+          );
+        }
       }
     } else {
       Navigator.push(
@@ -188,7 +209,7 @@ class ProductViewModel with ChangeNotifier {
 
   void showReviewScreen(BuildContext context, Review? review) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ReviewScreenWidget(
@@ -215,7 +236,7 @@ class ProductViewModel with ChangeNotifier {
 
   void showAlert(BuildContext context, Review review) async {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ActionSheetWidget(

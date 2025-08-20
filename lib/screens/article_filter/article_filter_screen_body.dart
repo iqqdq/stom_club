@@ -30,7 +30,7 @@ class _ArticleFilterScreenBodyState
     extends State<ArticleFilterScreenBodyWidget> {
   @override
   Widget build(BuildContext context) {
-    final _articleFilterViewModel =
+    final articleFilterViewModel =
         Provider.of<ArticleFilterViewModel>(context, listen: true);
 
     return Scaffold(
@@ -38,7 +38,7 @@ class _ArticleFilterScreenBodyState
         body: Container(
             margin: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             padding: const EdgeInsets.only(top: 16.0),
             decoration: BoxDecoration(
                 color: HexColors.background,
@@ -50,17 +50,17 @@ class _ArticleFilterScreenBodyState
                 child: ListView.builder(
                     padding: const EdgeInsets.only(
                         top: 64.0, left: 20.0, bottom: 90.0, right: 20.0),
-                    itemCount: _articleFilterViewModel.subcategories.length,
+                    itemCount: articleFilterViewModel.subcategories.length,
                     itemBuilder: (context, index) {
                       return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 16.0),
                             Text(
-                                _articleFilterViewModel.subcategories[index]
+                                articleFilterViewModel.subcategories[index]
                                         .subcategories.isEmpty
                                     ? ''
-                                    : _articleFilterViewModel
+                                    : articleFilterViewModel
                                         .subcategories[index].name,
                                 style: TextStyle(
                                   fontFamily: 'Inter',
@@ -72,31 +72,31 @@ class _ArticleFilterScreenBodyState
                                 physics: const NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
                                 padding: const EdgeInsets.only(top: 20.0),
-                                itemCount: _articleFilterViewModel
+                                itemCount: articleFilterViewModel
                                     .subcategories[index].subcategories.length,
                                 itemBuilder: (context, subcategoryIndex) {
-                                  var _isSelected = false;
+                                  var isSelected = false;
 
                                   for (var manufacturer
-                                      in _articleFilterViewModel
+                                      in articleFilterViewModel
                                           .selectedSubcategories) {
                                     if (manufacturer.id ==
-                                        _articleFilterViewModel
+                                        articleFilterViewModel
                                             .subcategories[index]
                                             .subcategories[subcategoryIndex]
                                             .id) {
-                                      _isSelected = true;
+                                      isSelected = true;
                                     }
                                   }
 
                                   return SelectionListItemWidget(
-                                      title: _articleFilterViewModel
+                                      title: articleFilterViewModel
                                           .subcategories[index]
                                           .subcategories[subcategoryIndex]
                                           .name,
-                                      isSelected: _isSelected,
-                                      onTap: () => _articleFilterViewModel
-                                          .onItemSelect(_articleFilterViewModel
+                                      isSelected: isSelected,
+                                      onTap: () => articleFilterViewModel
+                                          .onItemSelect(articleFilterViewModel
                                                   .subcategories[index]
                                                   .subcategories[
                                               subcategoryIndex]));
@@ -141,17 +141,17 @@ class _ArticleFilterScreenBodyState
 
                           /// APPLY BUTTON
                           DefaultButtonWidget(
-                              title: _articleFilterViewModel
+                              title: articleFilterViewModel
                                       .selectedSubcategories.isEmpty
                                   ? Titles.apply
-                                  : '${Titles.apply} (${_articleFilterViewModel.selectedSubcategories.length})',
-                              isEnabled: _articleFilterViewModel
+                                  : '${Titles.apply} (${articleFilterViewModel.selectedSubcategories.length})',
+                              isEnabled: articleFilterViewModel
                                   .selectedSubcategories.isNotEmpty,
-                              onTap: () => _articleFilterViewModel.onApplyTap(
+                              onTap: () => articleFilterViewModel.onApplyTap(
                                   context, widget.didReturnValue)))),
 
               /// INDICATOR
-              _articleFilterViewModel.loadingStatus == LoadingStatus.searching
+              articleFilterViewModel.loadingStatus == LoadingStatus.searching
                   ? Container(
                       margin: const EdgeInsets.only(bottom: 32.0),
                       child: const Center(child: LoadIndicatorWidget()))

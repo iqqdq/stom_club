@@ -77,10 +77,14 @@ class ReviewsViewModel with ChangeNotifier {
                 {
                   _reviews.insert(0, response),
                   loadingStatus = LoadingStatus.completed,
-                  showOkAlertDialog(
-                      context: context,
-                      title: Titles.warning,
-                      message: Titles.send_review_success),
+                  if (context.mounted)
+                    {
+                      showOkAlertDialog(
+                        context: context,
+                        title: Titles.warning,
+                        message: Titles.send_review_success,
+                      ),
+                    }
                 }
               else
                 {
@@ -105,10 +109,14 @@ class ReviewsViewModel with ChangeNotifier {
                   _reviews.removeWhere((element) => element.id == response.id),
                   _reviews.add(response),
                   loadingStatus = LoadingStatus.completed,
-                  showOkAlertDialog(
-                      context: context,
-                      title: Titles.warning,
-                      message: Titles.change_review_success),
+                  if (context.mounted)
+                    {
+                      showOkAlertDialog(
+                        context: context,
+                        title: Titles.warning,
+                        message: Titles.change_review_success,
+                      ),
+                    }
                 }
               else
                 {
@@ -125,12 +133,16 @@ class ReviewsViewModel with ChangeNotifier {
 
     await ReviewRepository().deleteReview(reviewId).then((response) => {
           _reviews.removeWhere((element) => element.id == reviewId),
-          showOkAlertDialog(
-              context: context,
-              title: Titles.warning,
-              message: Titles.delete_review_success),
           loadingStatus = LoadingStatus.completed,
-          notifyListeners()
+          notifyListeners(),
+          if (context.mounted)
+            {
+              showOkAlertDialog(
+                context: context,
+                title: Titles.warning,
+                message: Titles.delete_review_success,
+              ),
+            },
         });
   }
 
@@ -145,7 +157,7 @@ class ReviewsViewModel with ChangeNotifier {
 
   void showReviewScreen(Pagination pagination, Review? review) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ReviewScreenWidget(
@@ -174,7 +186,7 @@ class ReviewsViewModel with ChangeNotifier {
   void showAlert(
       BuildContext context, Pagination pagination, Review review) async {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ActionSheetWidget(
@@ -189,7 +201,7 @@ class ReviewsViewModel with ChangeNotifier {
 
   void showProfileScreen(BuildContext context, int userId) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ProfileScreenWidget(userId: userId));
@@ -215,10 +227,13 @@ class ReviewsViewModel with ChangeNotifier {
         OpenResult openResult = await OpenFilex.open(filePath);
 
         if (openResult.type == ResultType.noAppToOpen) {
-          showOkAlertDialog(
+          if (context.mounted) {
+            showOkAlertDialog(
               context: context,
               title: Titles.warning,
-              message: Titles.no_open_file_app);
+              message: Titles.no_open_file_app,
+            );
+          }
         }
       } else {
         Navigator.push(

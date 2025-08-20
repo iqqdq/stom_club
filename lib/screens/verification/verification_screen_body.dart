@@ -67,7 +67,7 @@ class _VerificationScreenBodyState extends State<VerificationScreenBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final _verificationViewModel =
+    final verificationViewModel =
         Provider.of<VerificationViewModel>(context, listen: true);
 
     return Stack(children: [
@@ -89,7 +89,7 @@ class _VerificationScreenBodyState extends State<VerificationScreenBodyWidget> {
             /// PHONE TITLE
             Text(
                 PhoneMask()
-                    .setMask(_verificationViewModel.authorization?.phone ?? ''),
+                    .setMask(verificationViewModel.authorization?.phone ?? ''),
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,
@@ -140,19 +140,28 @@ class _VerificationScreenBodyState extends State<VerificationScreenBodyWidget> {
                         FocusScope.of(context).unfocus(),
 
                         /// VERIFY IS USER EXISTS
-                        Future.delayed(
-                            const Duration(milliseconds: 200),
-                            () => _verificationViewModel
-                                .verify(context, _textEditingController)
+
+                        Future.delayed(const Duration(milliseconds: 200), () {
+                          if (context.mounted) {
+                            verificationViewModel
+                                .verify(
+                                  context,
+                                  _textEditingController,
+                                )
                                 .then((value) async => {
-                                      if (_verificationViewModel.authToken !=
+                                      if (verificationViewModel.authToken !=
                                           null)
-                                        if (_verificationViewModel
+                                        if (verificationViewModel
                                             .authorization!.isCreated)
                                           widget.onUpdate(2)
                                         else
-                                          Navigator.pop(context)
-                                    }))
+                                          {
+                                            if (context.mounted)
+                                              Navigator.pop(context)
+                                          }
+                                    });
+                          }
+                        })
                       }
                   },
                   onEditingComplete: () => FocusScope.of(context).unfocus(),
@@ -168,7 +177,7 @@ class _VerificationScreenBodyState extends State<VerificationScreenBodyWidget> {
                 isEnabled: _seconds == 0,
                 onTap: () => {
                       FocusScope.of(context).unfocus(),
-                      _verificationViewModel.resend(context).then((value) =>
+                      verificationViewModel.resend(context).then((value) =>
                           {_seconds = 59, _timer.cancel(), _startTimer()})
                     }),
             const SizedBox(height: 16.0),
@@ -197,7 +206,7 @@ class _VerificationScreenBodyState extends State<VerificationScreenBodyWidget> {
           ])),
 
       /// INDICATOR
-      _verificationViewModel.loadingStatus == LoadingStatus.searching
+      verificationViewModel.loadingStatus == LoadingStatus.searching
           ? Container(
               margin: const EdgeInsets.only(bottom: 32.0),
               child: const Center(child: LoadIndicatorWidget()))

@@ -61,22 +61,23 @@ class _ArticlesScreenBodyState extends State<ArticlesScreenBodyWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final _articlesViewModel =
+    final articlesViewModel =
         Provider.of<ArticlesViewModel>(context, listen: true);
 
     if (_isRefresh) {
       _isRefresh = !_isRefresh;
-      _articlesViewModel.getArticleList(
-          _pagination, '', '', _articlesViewModel.subcategories);
+      articlesViewModel.getArticleList(
+          _pagination, '', '', articlesViewModel.subcategories);
     }
 
     return Scaffold(
         backgroundColor: HexColors.background,
         body: Padding(
             padding: EdgeInsets.only(
-                top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0),
-                bottom: Sizes.tabControllerHeight),
+              top: MediaQuery.of(context).padding.top +
+                  (DeviceDetector.isLarge(context) ? 0.0 : 12.0),
+              bottom: Sizes.tabControllerHeight(context),
+            ),
             child: SizedBox.expand(
                 child: Stack(children: [
               Column(children: [
@@ -98,11 +99,11 @@ class _ArticlesScreenBodyState extends State<ArticlesScreenBodyWidget>
                       /// FILTER BUTTON
                       FilterButtonWidget(
                           title: Titles.filter,
-                          onTap: () => _articlesViewModel.showFilterScreen(
+                          onTap: () => articlesViewModel.showFilterScreen(
                               context,
                               Pagination(number: 1, size: 40),
                               '',
-                              _articlesViewModel.subcategories)),
+                              articlesViewModel.subcategories)),
                     ]),
 
                 const SizedBox(height: 12.0),
@@ -110,25 +111,24 @@ class _ArticlesScreenBodyState extends State<ArticlesScreenBodyWidget>
                 /// HORIZONTAL LIST
                 Container(
                     margin: EdgeInsets.only(
-                        bottom: _articlesViewModel.subcategories.isEmpty
+                        bottom: articlesViewModel.subcategories.isEmpty
                             ? 0.0
                             : 4.0),
                     height:
-                        _articlesViewModel.subcategories.isEmpty ? 0.0 : 38.0,
+                        articlesViewModel.subcategories.isEmpty ? 0.0 : 38.0,
                     child: ListView.builder(
                         padding: const EdgeInsets.only(left: 20.0, right: 10.0),
                         scrollDirection: Axis.horizontal,
-                        itemCount: _articlesViewModel.subcategories.length,
+                        itemCount: articlesViewModel.subcategories.length,
                         itemBuilder: (context, index) {
                           return FilterListItemWidget(
                               title:
-                                  _articlesViewModel.subcategories[index].name,
+                                  articlesViewModel.subcategories[index].name,
                               onTap: () => {},
                               onRemoveTap: () =>
-                                  _articlesViewModel.removeSubcategory(
+                                  articlesViewModel.removeSubcategory(
                                       Pagination(number: 1, size: 40),
-                                      _articlesViewModel
-                                          .subcategories[index].id,
+                                      articlesViewModel.subcategories[index].id,
                                       ''));
                         })),
                 Expanded(
@@ -139,31 +139,31 @@ class _ArticlesScreenBodyState extends State<ArticlesScreenBodyWidget>
                   child: ListView.builder(
                       physics: const AlwaysScrollableScrollPhysics(),
                       controller: _scrollController,
-                      itemCount: _articlesViewModel.articles.length,
+                      itemCount: articlesViewModel.articles.length,
                       padding: EdgeInsets.zero,
                       itemBuilder: (context, index) {
                         return ArticleListItem(
-                            url: _articlesViewModel.articles[index].images ==
-                                    null
-                                ? ''
-                                : _articlesViewModel
-                                        .articles[index].images!.isEmpty
+                            url:
+                                articlesViewModel.articles[index].images == null
                                     ? ''
-                                    : _articlesViewModel
-                                        .articles[index].images!.first.image,
-                            title: _articlesViewModel.articles[index].title,
+                                    : articlesViewModel
+                                            .articles[index].images!.isEmpty
+                                        ? ''
+                                        : articlesViewModel.articles[index]
+                                            .images!.first.image,
+                            title: articlesViewModel.articles[index].title,
                             dateTime: DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-                                .parse(_articlesViewModel
+                                .parse(articlesViewModel
                                     .articles[index].createdAt),
-                            onTap: () => _articlesViewModel.showArticleScreen(
-                                context, _articlesViewModel.articles[index]));
+                            onTap: () => articlesViewModel.showArticleScreen(
+                                context, articlesViewModel.articles[index]));
                       }),
                 )),
               ]),
 
               /// NO DATA LABEL
-              _articlesViewModel.loadingStatus == LoadingStatus.completed &&
-                      _articlesViewModel.articles.isEmpty
+              articlesViewModel.loadingStatus == LoadingStatus.completed &&
+                      articlesViewModel.articles.isEmpty
                   ? Center(
                       child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -176,7 +176,7 @@ class _ArticlesScreenBodyState extends State<ArticlesScreenBodyWidget>
                   : Container(),
 
               /// INDICATOR
-              _articlesViewModel.loadingStatus == LoadingStatus.searching
+              articlesViewModel.loadingStatus == LoadingStatus.searching
                   ? const Center(child: LoadIndicatorWidget())
                   : Container(),
             ]))));

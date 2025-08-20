@@ -59,10 +59,13 @@ class VerificationViewModel with ChangeNotifier {
 
         loadingStatus = LoadingStatus.error;
 
-        showOkAlertDialog(
+        if (context.mounted) {
+          showOkAlertDialog(
             title: Titles.error,
             message: _authError.phone.first,
-            context: context);
+            context: context,
+          );
+        }
       }
 
       notifyListeners();
@@ -85,10 +88,14 @@ class VerificationViewModel with ChangeNotifier {
                       {
                         loadingStatus = LoadingStatus.error,
                         textEditingController.clear(),
-                        showOkAlertDialog(
-                            title: Titles.error,
-                            message: response.first,
-                            context: context)
+                        if (context.mounted)
+                          {
+                            showOkAlertDialog(
+                              title: Titles.error,
+                              message: response.first,
+                              context: context,
+                            )
+                          }
                       }
                   }
                 else

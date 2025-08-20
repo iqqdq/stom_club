@@ -61,12 +61,12 @@ class _ManufacturerFilterScreenBodyState
 
   @override
   Widget build(BuildContext context) {
-    final _manufacturerFilterViewModel =
+    final manufacturerFilterViewModel =
         Provider.of<ManufacturerFilterViewModel>(context, listen: true);
 
     if (_isRefresh) {
       _isRefresh = !_isRefresh;
-      _manufacturerFilterViewModel.getManufacturerList(_pagination);
+      manufacturerFilterViewModel.getManufacturerList(_pagination);
     }
 
     return Scaffold(
@@ -74,7 +74,7 @@ class _ManufacturerFilterScreenBodyState
         body: Container(
             margin: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             padding: const EdgeInsets.only(top: 16.0),
             decoration: BoxDecoration(
                 color: HexColors.background,
@@ -125,26 +125,26 @@ class _ManufacturerFilterScreenBodyState
                                     : MediaQuery.of(context).padding.bottom +
                                         64.0,
                                 right: 20.0),
-                            itemCount: _manufacturerFilterViewModel
+                            itemCount: manufacturerFilterViewModel
                                 .manufacturers.length,
                             itemBuilder: (context, index) {
-                              var _isSelected = false;
+                              var isSelected = false;
                               for (var manufacturer
-                                  in _manufacturerFilterViewModel
+                                  in manufacturerFilterViewModel
                                       .selectedManufacturers) {
                                 if (manufacturer.id ==
-                                    _manufacturerFilterViewModel
+                                    manufacturerFilterViewModel
                                         .manufacturers[index].id) {
-                                  _isSelected = true;
+                                  isSelected = true;
                                 }
                               }
 
                               return SelectionListItemWidget(
-                                  title: _manufacturerFilterViewModel
+                                  title: manufacturerFilterViewModel
                                       .manufacturers[index].name,
-                                  isSelected: _isSelected,
-                                  onTap: () => _manufacturerFilterViewModel
-                                      .onItemSelect(_manufacturerFilterViewModel
+                                  isSelected: isSelected,
+                                  onTap: () => manufacturerFilterViewModel
+                                      .onItemSelect(manufacturerFilterViewModel
                                           .manufacturers[index]));
                             }))),
               ])),
@@ -162,18 +162,18 @@ class _ManufacturerFilterScreenBodyState
 
                           /// APPLY BUTTON
                           DefaultButtonWidget(
-                              title: _manufacturerFilterViewModel
+                              title: manufacturerFilterViewModel
                                       .selectedManufacturers.isEmpty
                                   ? Titles.apply
-                                  : '${Titles.apply} (${_manufacturerFilterViewModel.selectedManufacturers.length})',
-                              isEnabled: _manufacturerFilterViewModel
+                                  : '${Titles.apply} (${manufacturerFilterViewModel.selectedManufacturers.length})',
+                              isEnabled: manufacturerFilterViewModel
                                   .selectedManufacturers.isNotEmpty,
                               onTap: () =>
-                                  _manufacturerFilterViewModel.onApplyTap(
+                                  manufacturerFilterViewModel.onApplyTap(
                                       context, widget.didReturnValue)))),
 
               /// INDICATOR
-              _manufacturerFilterViewModel.loadingStatus ==
+              manufacturerFilterViewModel.loadingStatus ==
                       LoadingStatus.searching
                   ? Container(
                       margin: EdgeInsets.only(top: Sizes.appBarHeight + 24.0),

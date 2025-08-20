@@ -36,7 +36,7 @@ class TextViewWidget extends StatefulWidget {
 class _TextViewState extends State<TextViewWidget> {
   @override
   Widget build(BuildContext context) {
-    final _textFormField = TextFormField(
+    final textFormField = TextFormField(
       maxLines: widget.maxLines ?? 1,
       keyboardAppearance: widget.keyboardAppearance ?? Brightness.dark,
       keyboardType: widget.textInputType ?? TextInputType.text,
@@ -99,7 +99,7 @@ class _TextViewState extends State<TextViewWidget> {
                   ? HexColors.selected
                   : Colors.transparent),
           color: HexColors.gray),
-      child: _textFormField,
+      child: textFormField,
     );
   }
 }

@@ -31,15 +31,15 @@ class CommentListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _hour = dateTime.hour.toString().length == 1
+    final hour = dateTime.hour.toString().length == 1
         ? '0${dateTime.hour}'
         : dateTime.hour;
 
-    final _minute = dateTime.minute.toString().length == 1
+    final minute = dateTime.minute.toString().length == 1
         ? '0${dateTime.minute}'
         : dateTime.minute;
 
-    String _fileName = attachment == null
+    String fileName = attachment == null
         ? ''
         : attachment!.length >= 14
             ? '...${attachment!.substring(attachment!.length - 12, attachment!.length)}'
@@ -57,7 +57,7 @@ class CommentListItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.0),
             boxShadow: [
               BoxShadow(
-                  color: HexColors.black.withOpacity(0.05),
+                  color: HexColors.black.withValues(alpha: 0.05),
                   blurRadius: 10.0,
                   offset: const Offset(0.0, 4.0))
             ]),
@@ -115,7 +115,7 @@ class CommentListItem extends StatelessWidget {
 
             /// DATE
             Text(
-                '$_hour:$_minute / ${dateTime.day}.${dateTime.month}.${dateTime.year}',
+                '$hour:$minute / ${dateTime.day}.${dateTime.month}.${dateTime.year}',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Inter',
@@ -126,7 +126,7 @@ class CommentListItem extends StatelessWidget {
           ]),
           const SizedBox(height: 10.0),
           InkWell(
-              child: _fileName.isEmpty
+              child: fileName.isEmpty
                   ? Padding(
                       padding: const EdgeInsets.symmetric(vertical: 4.0),
                       child:
@@ -134,18 +134,19 @@ class CommentListItem extends StatelessWidget {
                           /// TEXT
                           Text(text,
                               style: TextStyle(
-                                  decoration: _fileName.isEmpty
+                                  decoration: fileName.isEmpty
                                       ? TextDecoration.none
                                       : TextDecoration.underline,
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14.0,
-                                  color: HexColors.black.withOpacity(0.8))))
+                                  color:
+                                      HexColors.black.withValues(alpha: 0.8))))
                   :
 
                   /// DOCUMENT
                   DocumentButtonWidget(
-                      name: _fileName.toUpperCase(),
+                      name: fileName.toUpperCase(),
                       attachment: attachment,
                       onTap: () =>
                           onDocumentTap == null ? null : onDocumentTap!())),

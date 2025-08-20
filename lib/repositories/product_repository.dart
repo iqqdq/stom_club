@@ -14,7 +14,7 @@ class ProductRepository {
       String? search,
       List<Subcategory>? subcategories,
       List<Manufacturer>? manufacturers) async {
-    var url = URLs.products_url + '?search=$search';
+    var url = '${URLs.products_url}?search=$search';
 
     if (isNew) {
       url += '&ordering=-created_at&is_new=$isNew';
@@ -46,15 +46,14 @@ class ProductRepository {
 
   Future<Object> getManufacturers(Pagination pagination) async {
     dynamic json = await WebService().get(
-        URLs.manufacturers_url +
-            '?page=${pagination.number}&size=${pagination.size}',
+        '${URLs.manufacturers_url}?page=${pagination.number}&size=${pagination.size}',
         false);
 
     return Manufacturers.fromJson(json);
   }
 
   Future<Object> getProduct(int id) async {
-    dynamic json = await WebService().get(URLs.products_url + '$id/', false);
+    dynamic json = await WebService().get('${URLs.products_url}$id/', false);
 
     return ProductInfo.fromJson(json);
   }

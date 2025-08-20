@@ -74,7 +74,7 @@ class _FileAttachmentViewState extends State<FileAttachmentViewWidget> {
 
   void _showAlert(BuildContext context) {
     showMaterialModalBottomSheet(
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ActionSheetWidget(
@@ -119,7 +119,7 @@ class _FileAttachmentViewState extends State<FileAttachmentViewWidget> {
                                 fontSize: 14.0,
                                 overflow: TextOverflow.ellipsis,
                                 color: _fileName == null
-                                    ? HexColors.black.withOpacity(0.5)
+                                    ? HexColors.black.withValues(alpha: 0.5)
                                     : _fileName!.isEmpty
                                         ? HexColors.separator
                                         : HexColors.black,

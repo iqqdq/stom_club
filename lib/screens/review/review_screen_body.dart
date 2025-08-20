@@ -183,8 +183,10 @@ class _ReviewScreenBodyState extends State<ReviewScreenBodyWidget> {
                               didReturnValue: (rating) => _rating = rating),
                           FileAttachmentViewWidget(
                               attachment: widget.review?.attachment,
-                              didReturnValue: (path, name) => setState(
-                                  () => {_filePath = path, _fileName = name}))
+                              didReturnValue: (path, name) => setState(() {
+                                    _filePath = path;
+                                    _fileName = name;
+                                  }))
                         ])),
 
                 /// CONTINUE BUTTON

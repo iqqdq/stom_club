@@ -7,8 +7,7 @@ import 'package:stom_club/services/web_service.dart';
 class CatalogRepository {
   Future<Object> getCategories(Pagination pagination) async {
     dynamic json = await WebService().get(
-        URLs.categories_url +
-            '?page=${pagination.number}&size=${pagination.size}',
+        '${URLs.categories_url}?page=${pagination.number}&size=${pagination.size}',
         false);
 
     return Category.fromJson(json);
@@ -23,7 +22,7 @@ class CatalogRepository {
 
   Future<Object> getBanners(Pagination pagination) async {
     dynamic json = await WebService().get(
-        URLs.banners_url + '?page=${pagination.number}&size=${pagination.size}',
+        '${URLs.banners_url}?page=${pagination.number}&size=${pagination.size}',
         false);
 
     return Advertisings.fromJson(json);

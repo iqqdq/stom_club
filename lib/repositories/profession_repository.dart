@@ -5,8 +5,8 @@ import 'package:stom_club/services/web_service.dart';
 
 class ProfessionRepository {
   Future<Object> getProfessions(Pagination pagination) async {
-    var url = URLs.professions_url +
-        '?page=${pagination.number}&size=${pagination.size}';
+    var url =
+        '${URLs.professions_url}?page=${pagination.number}&size=${pagination.size}';
 
     dynamic json = await WebService().get(url, false);
 

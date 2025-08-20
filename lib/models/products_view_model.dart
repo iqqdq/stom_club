@@ -117,7 +117,7 @@ class ProductsViewModel with ChangeNotifier {
       BuildContext context, Pagination pagination, String search) {
     showMaterialModalBottomSheet(
         enableDrag: false,
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ManufacturerFilterScreenWidget(
@@ -132,7 +132,7 @@ class ProductsViewModel with ChangeNotifier {
       BuildContext context, Pagination pagination, String search) {
     showMaterialModalBottomSheet(
         enableDrag: false,
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         context: context,
         backgroundColor: Colors.transparent,
         builder: (context) => ArticleFilterScreenWidget(

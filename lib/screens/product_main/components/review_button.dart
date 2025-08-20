@@ -15,7 +15,7 @@ class ReviewButton extends StatelessWidget {
       height: 56.0,
       decoration: BoxDecoration(
           border: Border.all(
-              width: 1.0, color: HexColors.unselected.withOpacity(0.25)),
+              width: 1.0, color: HexColors.unselected.withValues(alpha: 0.25)),
           borderRadius: BorderRadius.circular(16.0)),
       child: Material(
           color: Colors.transparent,

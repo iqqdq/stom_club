@@ -61,12 +61,12 @@ class _ProfessionFilterScreenBodyState
 
   @override
   Widget build(BuildContext context) {
-    final _professionsViewModel =
+    final professionsViewModel =
         Provider.of<ProfessionsViewModel>(context, listen: true);
 
     if (_isRefresh) {
       _isRefresh = !_isRefresh;
-      _professionsViewModel.getProfessions(_pagination);
+      professionsViewModel.getProfessions(_pagination);
     }
 
     return Scaffold(
@@ -74,7 +74,7 @@ class _ProfessionFilterScreenBodyState
         body: Container(
             margin: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             padding: const EdgeInsets.only(top: 16.0),
             decoration: BoxDecoration(
                 color: HexColors.background,
@@ -123,10 +123,10 @@ class _ProfessionFilterScreenBodyState
                               bottom:
                                   70.0 + MediaQuery.of(context).padding.bottom,
                             ),
-                            itemCount: _professionsViewModel.professions.length,
+                            itemCount: professionsViewModel.professions.length,
                             itemBuilder: (context, index) {
                               return SelectionListItemWidget(
-                                  title: _professionsViewModel
+                                  title: professionsViewModel
                                       .professions[index].name,
                                   isSelected: _index == index,
                                   onTap: () => setState(() => _index = index));
@@ -149,13 +149,13 @@ class _ProfessionFilterScreenBodyState
                               title: Titles.choose,
                               isEnabled: true,
                               onTap: () => {
-                                    widget.didReturnValue(_professionsViewModel
+                                    widget.didReturnValue(professionsViewModel
                                         .professions[_index]),
                                     Navigator.pop(context)
                                   }))),
 
               /// INDICATOR
-              _professionsViewModel.loadingStatus == LoadingStatus.searching
+              professionsViewModel.loadingStatus == LoadingStatus.searching
                   ? Container(
                       margin: EdgeInsets.only(top: Sizes.appBarHeight + 24.0),
                       child: const LoadIndicatorWidget())

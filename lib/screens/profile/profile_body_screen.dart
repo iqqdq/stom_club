@@ -96,7 +96,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
 
   @override
   Widget build(BuildContext context) {
-    final _profileViewModel =
+    final profileViewModel =
         Provider.of<ProfileViewModel>(context, listen: true);
 
     return Scaffold(
@@ -104,7 +104,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
         body: Container(
             margin: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top +
-                    (DeviceDetector().isLarge() ? 0.0 : 12.0)),
+                    (DeviceDetector.isLarge(context) ? 0.0 : 12.0)),
             decoration: BoxDecoration(
                 color: HexColors.background,
                 borderRadius: const BorderRadius.only(
@@ -113,7 +113,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
             child: SizedBox.expand(
                 child: Stack(children: [
               ListView(
-                physics: DeviceDetector().isLarge()
+                physics: DeviceDetector.isLarge(context)
                     ? const NeverScrollableScrollPhysics()
                     : const ScrollPhysics(),
                 shrinkWrap: true,
@@ -122,30 +122,31 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                 children: [
                   /// PHOTO
                   Stack(children: [
-                    _profileViewModel.user == null
+                    profileViewModel.user == null
                         ? Container()
                         : Center(
                             child: Container(
-                                width:
-                                    DeviceDetector().isLarge() ? 180.0 : 100.0,
-                                height:
-                                    DeviceDetector().isLarge() ? 180.0 : 100.0,
+                                width: DeviceDetector.isLarge(context)
+                                    ? 180.0
+                                    : 100.0,
+                                height: DeviceDetector.isLarge(context)
+                                    ? 180.0
+                                    : 100.0,
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                         width: 2.0,
                                         color: HexColors.unselected),
                                     borderRadius: BorderRadius.circular(
-                                        DeviceDetector().isLarge()
+                                        DeviceDetector.isLarge(context)
                                             ? 90.0
                                             : 50.0)),
                                 child: InkWell(
                                     onTap: () => _isMine
-                                        ? _openGallery(_profileViewModel)
+                                        ? _openGallery(profileViewModel)
                                         : {},
                                     borderRadius: BorderRadius.circular(90.0),
                                     child: _isMine &&
-                                            _profileViewModel.user?.photo ==
-                                                null
+                                            profileViewModel.user?.photo == null
                                         ? Center(
                                             child:
 
@@ -164,12 +165,14 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                                     )),
                                           )
                                         : Container(
-                                            width: DeviceDetector().isLarge()
-                                                ? 180.0
-                                                : 100.0,
-                                            height: DeviceDetector().isLarge()
-                                                ? 180.0
-                                                : 100.0,
+                                            width:
+                                                DeviceDetector.isLarge(context)
+                                                    ? 180.0
+                                                    : 100.0,
+                                            height:
+                                                DeviceDetector.isLarge(context)
+                                                    ? 180.0
+                                                    : 100.0,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
                                                     width: 2.0,
@@ -177,28 +180,28 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                                         .unselected),
                                                 borderRadius:
                                                     BorderRadius.circular(
-                                                        DeviceDetector()
-                                                                .isLarge()
+                                                        DeviceDetector.isLarge(
+                                                                context)
                                                             ? 90.0
                                                             : 50.0)),
-                                            child: _profileViewModel.user!.photo ==
-                                                    null
+                                            child: profileViewModel.user!.photo == null
                                                 ? Container()
                                                 : ClipRRect(
-                                                    borderRadius: BorderRadius
-                                                        .circular(DeviceDetector()
-                                                                .isLarge()
-                                                            ? 90.0
-                                                            : 50.0),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            DeviceDetector.isLarge(
+                                                                    context)
+                                                                ? 90.0
+                                                                : 50.0),
                                                     child: CachedNetworkImage(
-                                                        imageUrl: _profileViewModel
+                                                        imageUrl: profileViewModel
                                                                 .user!.photo!
                                                                 .startsWith(
                                                                     'https')
-                                                            ? _profileViewModel
+                                                            ? profileViewModel
                                                                 .user!.photo!
                                                             : URLs.media_url +
-                                                                _profileViewModel
+                                                                profileViewModel
                                                                     .user!
                                                                     .photo!,
                                                         fit: BoxFit.cover)),
@@ -208,7 +211,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                   const SizedBox(height: 24.0),
 
                   /// SUBTITLE
-                  Text(_profileViewModel.user?.profession?.name ?? '',
+                  Text(profileViewModel.user?.profession?.name ?? '',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Inter',
@@ -220,9 +223,9 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
 
                   /// NAME
                   Text(
-                      _profileViewModel.user == null
+                      profileViewModel.user == null
                           ? ''
-                          : '${_profileViewModel.user?.firstName} ${_profileViewModel.user?.lastName}',
+                          : '${profileViewModel.user?.firstName} ${profileViewModel.user?.lastName}',
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -233,13 +236,13 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                       )),
 
                   /// CONTACTS
-                  _profileViewModel.user == null
+                  profileViewModel.user == null
                       ? Container()
                       : ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           padding: const EdgeInsets.only(top: 24.0),
                           shrinkWrap: true,
-                          itemCount: _profileViewModel.user == null
+                          itemCount: profileViewModel.user == null
                               ? 0
                               : _images.length,
                           itemBuilder: (context, index) {
@@ -252,42 +255,42 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                     : _isMine
                                         ? 'assets/ic_edit.png'
                                         : index == 1
-                                            ? _profileViewModel.user?.vkUrl ==
+                                            ? profileViewModel.user?.vkUrl ==
                                                     null
                                                 ? null
                                                 : 'assets/ic_copy.png'
                                             : index == 2
-                                                ? _profileViewModel.user!
+                                                ? profileViewModel.user!
                                                             .telegramUrl ==
                                                         null
                                                     ? null
                                                     : 'assets/ic_copy.png'
                                                 : null,
                                 title: index == 0
-                                    ? _profileViewModel.user!.city
+                                    ? profileViewModel.user!.city
                                     : index == 1
-                                        ? _profileViewModel.user?.vkUrl == null
+                                        ? profileViewModel.user?.vkUrl == null
                                             ? '-'
-                                            : _profileViewModel
+                                            : profileViewModel
                                                     .user!.vkUrl!.isEmpty
                                                 ? '-'
-                                                : _profileViewModel.user!.vkUrl!
-                                        : _profileViewModel.user!.telegramUrl ==
+                                                : profileViewModel.user!.vkUrl!
+                                        : profileViewModel.user!.telegramUrl ==
                                                 null
                                             ? '-'
-                                            : _profileViewModel
+                                            : profileViewModel
                                                     .user!.telegramUrl!.isEmpty
                                                 ? '-'
-                                                : _profileViewModel
+                                                : profileViewModel
                                                     .user!.telegramUrl!,
                                 onTap: () => index == 0
                                     ? null
                                     : index == 1
-                                        ? _profileViewModel.showVk(context,
-                                            _profileViewModel.user!.vkUrl ?? '')
-                                        : _profileViewModel.showTelegram(
+                                        ? profileViewModel.showVk(context,
+                                            profileViewModel.user!.vkUrl ?? '')
+                                        : profileViewModel.showTelegram(
                                             context,
-                                            _profileViewModel
+                                            profileViewModel
                                                     .user!.telegramUrl ??
                                                 ''),
                                 onButtonTap: () => index == 0
@@ -297,7 +300,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                             showMaterialModalBottomSheet(
                                                 enableDrag: false,
                                                 barrierColor: Colors.black
-                                                    .withOpacity(0.5),
+                                                    .withValues(alpha: 0.5),
                                                 context: context,
                                                 backgroundColor:
                                                     Colors.transparent,
@@ -305,11 +308,11 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                                     UpdateScreenWidget(
                                                         isVk: index == 1,
                                                         url: index == 1
-                                                            ? _profileViewModel
+                                                            ? profileViewModel
                                                                     .user
                                                                     ?.vkUrl ??
                                                                 ''
-                                                            : _profileViewModel
+                                                            : profileViewModel
                                                                     .user
                                                                     ?.telegramUrl ??
                                                                 '',
@@ -317,7 +320,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
 
                                                             //  UPDATE VK/TELEGRAM
                                                             _updateProfile(
-                                                                _profileViewModel,
+                                                                profileViewModel,
                                                                 index == 1
                                                                     ? value
                                                                     : null,
@@ -326,13 +329,13 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                                                     : null)))
                                           }
                                         : {
-                                            _profileViewModel.copyAddress(
+                                            profileViewModel.copyAddress(
                                                 context,
                                                 index == 1
-                                                    ? _profileViewModel
+                                                    ? profileViewModel
                                                             .user?.vkUrl ??
                                                         ''
-                                                    : _profileViewModel.user
+                                                    : profileViewModel.user
                                                             ?.telegramUrl ??
                                                         ''),
                                             _showToast()
@@ -356,7 +359,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                           fontSize: 16.0,
                                           color: HexColors.selected)))),
                           onPressed: () =>
-                              _profileViewModel.deleteMyAccount(context),
+                              profileViewModel.deleteMyAccount(context),
                         )
                       : Container(),
 
@@ -376,7 +379,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                                           fontWeight: FontWeight.w500,
                                           fontSize: 16.0,
                                           color: HexColors.selected)))),
-                          onPressed: () => _profileViewModel.logout(context),
+                          onPressed: () => profileViewModel.logout(context),
                         )
                       : Container()
                 ],
@@ -395,7 +398,7 @@ class _ProfileScreenBodyState extends State<ProfileScreenBodyWidget>
                               onTap: () => Navigator.pop(context)))),
 
               /// INDICATOR
-              _profileViewModel.loadingStatus == LoadingStatus.searching
+              profileViewModel.loadingStatus == LoadingStatus.searching
                   ? Container(
                       margin: const EdgeInsets.only(bottom: 32.0),
                       child: const Center(child: LoadIndicatorWidget()))

@@ -92,21 +92,22 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final _reviewsViewModel =
+    final reviewsViewModel =
         Provider.of<ReviewsViewModel>(context, listen: true);
 
-    Review? _myReview;
-    for (var review in _reviewsViewModel.reviews) {
+    Review? myReview;
+
+    for (var review in reviewsViewModel.reviews) {
       if (_authorization != null) {
         if (review.createdBy.id == _authorization?.id) {
-          _myReview = review;
+          myReview = review;
         }
       }
     }
 
     if (_isRefresh) {
       _isRefresh = !_isRefresh;
-      _reviewsViewModel.getReviewList(_pagination);
+      reviewsViewModel.getReviewList(_pagination);
     }
 
     return Scaffold(
@@ -125,9 +126,9 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                    _reviewsViewModel.reviews.isEmpty
+                    reviewsViewModel.reviews.isEmpty
                         ? Titles.reviews
-                        : '${Titles.reviews} (${_reviewsViewModel.reviews.length})',
+                        : '${Titles.reviews} (${reviewsViewModel.reviews.length})',
                     style: TextStyle(
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
@@ -154,58 +155,58 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
                   child: ListView.builder(
                       controller: _scrollController,
                       shrinkWrap: true,
-                      itemCount: _reviewsViewModel.reviews.length,
+                      itemCount: reviewsViewModel.reviews.length,
                       padding: EdgeInsets.only(
-                          bottom: DeviceDetector().isLarge()
+                          bottom: DeviceDetector.isLarge(context)
                               ? MediaQuery.of(context).padding.bottom + 64.0
                               : 72.0),
                       itemBuilder: (context, index) {
                         return ReviewListItem(
                             name:
-                                '${_reviewsViewModel.reviews[index].createdBy.firstName} ${_reviewsViewModel.reviews[index].createdBy.lastName}',
-                            url: _reviewsViewModel.reviews[index].createdBy.photo ??
+                                '${reviewsViewModel.reviews[index].createdBy.firstName} ${reviewsViewModel.reviews[index].createdBy.lastName}',
+                            url: reviewsViewModel.reviews[index].createdBy.photo ??
                                 '',
-                            rating: _reviewsViewModel.reviews[index].rating
+                            rating: reviewsViewModel.reviews[index].rating
                                 .toDouble(),
-                            pluses: _reviewsViewModel.reviews[index].advantages,
-                            minuses: _reviewsViewModel.reviews[index].defects,
+                            pluses: reviewsViewModel.reviews[index].advantages,
+                            minuses: reviewsViewModel.reviews[index].defects,
                             comments:
-                                _reviewsViewModel.reviews[index].commentsCount,
+                                reviewsViewModel.reviews[index].commentsCount,
                             attachment:
-                                _reviewsViewModel.reviews[index].attachment,
-                            likes: _reviewsViewModel.reviews[index].likesCount,
-                            isLiked: _reviewsViewModel.reviews[index].hasMyLike,
+                                reviewsViewModel.reviews[index].attachment,
+                            likes: reviewsViewModel.reviews[index].likesCount,
+                            isLiked: reviewsViewModel.reviews[index].hasMyLike,
                             dislikes:
-                                _reviewsViewModel.reviews[index].dislikesCount,
+                                reviewsViewModel.reviews[index].dislikesCount,
                             isDisliked:
-                                _reviewsViewModel.reviews[index].hasMyDislike,
+                                reviewsViewModel.reviews[index].hasMyDislike,
                             dateTime: DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
                                 .parse(
-                                    _reviewsViewModel.reviews[index].createdAt),
-                            onUserTap: () => _reviewsViewModel.showProfileScreen(
+                                    reviewsViewModel.reviews[index].createdAt),
+                            onUserTap: () => reviewsViewModel.showProfileScreen(
                                 context,
-                                _reviewsViewModel.reviews[index].createdBy.id!),
-                            onLikeTap: () => _reviewsViewModel.setLikeToReview(
+                                reviewsViewModel.reviews[index].createdBy.id!),
+                            onLikeTap: () => reviewsViewModel.setLikeToReview(
                                 _pagination,
                                 index,
-                                !_reviewsViewModel.reviews[index].hasMyLike),
-                            onDislikeTap: () => _reviewsViewModel
+                                !reviewsViewModel.reviews[index].hasMyLike),
+                            onDislikeTap: () => reviewsViewModel
                                 .setLikeToReview(_pagination, index, false),
                             onDocumentTap: () =>
-                                _reviewsViewModel.openFile(_reviewsViewModel.reviews[index].attachment == null
+                                reviewsViewModel.openFile(reviewsViewModel.reviews[index].attachment == null
                                     ? ''
-                                    : _reviewsViewModel.reviews[index].attachment!.contains('https')
-                                        ? _reviewsViewModel.reviews[index].attachment!
-                                        : URLs.media_url + _reviewsViewModel.reviews[index].attachment!),
-                            onAnswerTap: () => _reviewsViewModel.showCommentsScreen(
+                                    : reviewsViewModel.reviews[index].attachment!.contains('https')
+                                        ? reviewsViewModel.reviews[index].attachment!
+                                        : URLs.media_url + reviewsViewModel.reviews[index].attachment!),
+                            onAnswerTap: () => reviewsViewModel.showCommentsScreen(
                                 context,
                                 _pagination,
                                 _authorization == null
                                     ? false
                                     : !_isAuthorized
                                         ? false
-                                        : _authorization?.id == _reviewsViewModel.reviews[index].createdBy.id,
-                                _reviewsViewModel.reviews[index]));
+                                        : _authorization?.id == reviewsViewModel.reviews[index].createdBy.id,
+                                reviewsViewModel.reviews[index]));
                       }))),
 
           /// SEND/CHANGE REVIEW BUTTON
@@ -213,7 +214,7 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               DefaultButtonWidget(
-                  title: _myReview == null
+                  title: myReview == null
                       ? Titles.feedback
                       : Titles.change_feedback,
                   margin: EdgeInsets.only(
@@ -223,11 +224,11 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
                           ? 12.0
                           : MediaQuery.of(context).padding.bottom),
                   onTap: () => _isAuthorized
-                      ? _myReview == null
-                          ? _reviewsViewModel.showReviewScreen(
-                              _pagination, _myReview)
-                          : _reviewsViewModel.showAlert(
-                              context, _pagination, _myReview)
+                      ? myReview == null
+                          ? reviewsViewModel.showReviewScreen(
+                              _pagination, myReview)
+                          : reviewsViewModel.showAlert(
+                              context, _pagination, myReview)
                       : showOkAlertDialog(
                           context: context,
                           title: Titles.warning,
@@ -236,8 +237,8 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
           ),
 
           /// NO DATA LABEL
-          _reviewsViewModel.loadingStatus == LoadingStatus.completed &&
-                  _reviewsViewModel.reviews.isEmpty
+          reviewsViewModel.loadingStatus == LoadingStatus.completed &&
+                  reviewsViewModel.reviews.isEmpty
               ? Center(
                   child: Padding(
                       padding: EdgeInsets.only(
@@ -251,7 +252,7 @@ class _ReviewsScreenBodyState extends State<ReviewsScreenBodyWidget>
               : Container(),
 
           /// INDICATOR
-          _reviewsViewModel.loadingStatus == LoadingStatus.searching
+          reviewsViewModel.loadingStatus == LoadingStatus.searching
               ? Container(
                   margin: EdgeInsets.only(bottom: Sizes.appBarHeight + 34.0),
                   child: const Center(

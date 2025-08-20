@@ -21,12 +21,12 @@ class DefaultButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _isEnabled = isEnabled == null ? true : isEnabled!;
+    final enabled = isEnabled == null ? true : isEnabled!;
 
     return IgnorePointer(
-        ignoring: !_isEnabled,
+        ignoring: !enabled,
         child: Opacity(
-            opacity: _isEnabled ? 1.0 : 0.5,
+            opacity: enabled ? 1.0 : 0.5,
             child: Container(
                 margin: margin ?? EdgeInsets.zero,
                 height: 56.0,
@@ -51,10 +51,11 @@ class DefaultButtonWidget extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16.0,
                                     overflow: TextOverflow.ellipsis,
-                                    color: _isEnabled
+                                    color: enabled
                                         ? titleColor ?? HexColors.white
                                         : titleColor ??
-                                            HexColors.white.withOpacity(0.5),
+                                            HexColors.white
+                                                .withValues(alpha: 0.5),
                                   )))),
                     )))));
   }
